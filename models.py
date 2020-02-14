@@ -27,8 +27,8 @@ class Person(db.Model):
   __tablename__ = 'People'
 
   id = Column(db.Integer, primary_key=True)
-  name = Column(db.String)
-  catchphrase = Column(db.String)
+  name = Column(db.String(120))
+  catchphrase = Column(db.String(120))
 
   def __init__(self, name, catchphrase=""):
     self.name = name
