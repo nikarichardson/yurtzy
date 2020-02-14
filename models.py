@@ -1,10 +1,12 @@
 from sqlalchemy import Column, String, create_engine
 from flask_sqlalchemy import SQLAlchemy
+from boto.s3.connection import S3Connection
+
 import os
 import json
 
-
-database_path = os.environ['DATABASE_URL']
+# s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
+database_path = os.environ.get('DATABASE_URL', None)
 db = SQLAlchemy()
 
 '''
