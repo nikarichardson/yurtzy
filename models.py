@@ -1,6 +1,5 @@
 from sqlalchemy import Column, String, create_engine
 from flask_sqlalchemy import SQLAlchemy
-from boto.s3.connection import S3Connection
 
 import os
 import json
