@@ -5,8 +5,9 @@ import os
 import json
 
 # s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
-database_path = os.environ.get('DATABASE_URL', None)
-os.environ['DATABASE_URL'] = os.environ.get('DATABASE_URL', None)
+#database_path = os.environ.get('DATABASE_URL', None)
+database_path = os.environ['DATABASE_URL']
+#os.environ['DATABASE_URL'] = os.environ.get('DATABASE_URL', None)
 db = SQLAlchemy()
 
 '''

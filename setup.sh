@@ -1,0 +1,3 @@
+DATABASE_URL=postgres://kwwzwozzasiqiw:8e70aed4e726e6e2d96cdf380525fa2884689070fdcda2daf3b0c389d879433f@ec2-18-213-176-229.compute-1.amazonaws.com:5432/df2ce01ne4r1gj
+EXCITED=true
+HEROKU_POSTGRESQL_MAROON_URL=postgres://yxujnxmozzpwgg:0b7d7052312ab943a0865f8d305de78e3f4510984268214f091a7f5e91e1905f@ec2-184-72-236-3.compute-1.amazonaws.com:5432/dfnek97u27515t
