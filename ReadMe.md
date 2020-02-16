@@ -1,5 +1,5 @@
 
-<img src="=https://66.media.tumblr.com/6849576fe4489f33f25b722b32d95c0e/e89b7ceae0572455-d9/s1280x1920/f6e6a8aa3e4d82d9411b5e7aee2065890a0a8946.png" width="300" height="120" align="left">
+<img src="https://66.media.tumblr.com/6849576fe4489f33f25b722b32d95c0e/e89b7ceae0572455-d9/s1280x1920/f6e6a8aa3e4d82d9411b5e7aee2065890a0a8946.png" width="300" height="120" align="left">
 
 ## About 
 Yurtzy🏕️ is an application targeted to urbanites that allows visitors to find campsites near the 25 largest urban agglomerations in the United States.
