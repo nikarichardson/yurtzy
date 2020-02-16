@@ -1,5 +1,5 @@
 
-<img src="https://raw.githubusercontent.com/nikarichardson/yurtzy/master/Resources/Logos%20By%20Tailor%20Brands/Color%20Logo%20Transparent%20BG.png?token=AJTEXVIUAFNRPZAHMSUWB3S6JCKQQ" width="300" height="120" align="left">
+<img src="https://raw.githubusercontent.com/nikarichardson/yurtzy/master/Resources/Logos%20By%20Tailor%20Brands/Color%20Logo%20Transparent%20BG.png?token=AJTEXVMXQWQ3GGEBSP7MFES6JHIKQ" width="300" height="120" align="left">
 
 ## About 
 Yurtzy🏕️ is an application targeted to urbanites that allows visitors to find campsites near the 25 largest urban agglomerations in the United States.
