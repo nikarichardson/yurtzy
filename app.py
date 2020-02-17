@@ -24,15 +24,6 @@ def create_app(test_config=None):
 
     @app.route('/campsites', methods=['GET'])
     def get_campsites():
-        """
-        excited = os.environ['EXCITED']
-        greeting = "Hello" 
-        #person = Person(name="Maria", catchphrase="hello!")
-        #person.insert()
-        if excited == 'true': 
-            greeting = greeting + "!!!!!"
-            return greeting #+ person.name 
-        """
         return "Not implemented!"
 
     @app.route('/campsites/<int:campsite_id>', methods=['GET'])
