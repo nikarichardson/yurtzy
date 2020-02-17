@@ -39,7 +39,7 @@ All visitors may access the public **GET /campsites** endpoint.
 
 # Endpoints
 ## GET /campsites
-<br/>**Description:** Gets all campsites organized by nearest urban center.
+<br/>**Description:** Gets all campsites organized under listings of nearest urban centers.
 <br/>**Roles:** a public endpoint. All visitors may access.
 <br/>**Request Arguments:** None
 <br/>**Returns**:
