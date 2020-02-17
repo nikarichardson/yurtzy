@@ -11,6 +11,17 @@ def create_app(test_config=None):
     setup_db(app)
     CORS(app)
 
+    @app.route('/')
+    def hello_greeting():
+        excited = os.environ['EXCITED']
+        greeting = "Hello" 
+        #person = Person(name="Maria", catchphrase="hello!")
+        #person.insert()
+        if excited == 'true': 
+            greeting = greeting + "!!!!!"
+            return greeting 
+        
+
     @app.route('/campsites', methods=['GET'])
     def get_campsites():
         """
@@ -78,7 +89,7 @@ def create_app(test_config=None):
 
     @app.errorhandler(401)
     def unauthorized(error):
-    return jsonify({
+        return jsonify({
             "success": False,
             "error": 401,
             "message": "unauthorized"
@@ -92,7 +103,7 @@ def create_app(test_config=None):
 
     @app.errorhandler(403)
     def forbidden(error):
-    return jsonify({
+        return jsonify({
             "success": False,
             "error": 403,
             "message": "forbidden"
@@ -106,7 +117,7 @@ def create_app(test_config=None):
 
     @app.errorhandler(500)
     def unprocessable(error):
-    return jsonify({
+        return jsonify({
             "success": False,
             "error": 500,
             "message": "internal server error"
