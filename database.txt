@@ -1,10 +1,12 @@
-INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking) VALUES (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking); 
+INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills) VALUES (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills); 
 
 
-INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking) VALUES ("Oxbow Regional Park","https://www.oregonmetro.gov/parks/oxbow-regional-park","3010 SE Oxbow Pkwy, Gresham, OR 97080",23.8,"Portland","https://www.oregonmetro.gov/sites/default/files/styles/slideshow_compact/public/2017/06/27/oxbow_aerial_1125.jpg?itok=gA6HNf4_","Oxbow Regional Park provides a perfect launch point for swimming, kayaking, rafting or fishing in the majestic Sandy River Gorge.",22,False,True,True,True,True,True,False,True,True,False,False,True,True,True,True,True); 
+INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills) VALUES ("Oxbow Regional Park","https://www.oregonmetro.gov/parks/oxbow-regional-park","3010 SE Oxbow Pkwy, Gresham, OR 97080",23.8,"Portland","https://www.oregonmetro.gov/sites/default/files/styles/slideshow_compact/public/2017/06/27/oxbow_aerial_1125.jpg?itok=gA6HNf4_","Oxbow Regional Park provides a perfect launch point for swimming, kayaking, rafting or fishing in the majestic Sandy River Gorge.",22,False,True,True,True,True,True,False,True,True,False,False,True,True,True,True,True,True,True); 
 
 ## Add hiking
 ## Add camping 
+## Add swimming
 ## Add biking
 ## Add kayaking 
+## Add cooking grills
 ## Add Website on website (and the rest)

@@ -58,6 +58,8 @@ class Campsite(db.Model):
   camping = db.Column(db.Boolean,default=False) 
   biking = db.Column(db.Boolean,default=False) 
   kayaking = db.Column(db.Boolean,default=False) 
+  swimming = db.Column(db.Boolean,default=False) 
+  cooking_grills = db.Column(db.Boolean,default=False) 
 
   def __init__(self, name, catchphrase=""):
     self.name = name
@@ -121,6 +123,8 @@ class Campsite(db.Model):
       'hiking': self.hiking,
       'camping': self.camping,
       'biking': self.biking,
-      'kayaking': self.kayaking}
+      'kayaking': self.kayaking,
+      'swimming': self.swimming,
+      'cooking_grills': self.cooking_grills}
 
 
