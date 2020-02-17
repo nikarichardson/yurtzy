@@ -14,11 +14,11 @@ def create_app(test_config=None):
     def get_greeting():
         excited = os.environ['EXCITED']
         greeting = "Hello" 
-        person = Person(name="Sara", catchphrase="hello!")
+        person = Person(name="Maria", catchphrase="hello!")
         person.insert()
         if excited == 'true': 
             greeting = greeting + "!!!!!"
-            return greeting # + person.name 
+            return greeting + person.name 
 
 
     @app.route('/coolkids')
