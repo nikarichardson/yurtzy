@@ -115,7 +115,7 @@ The authentication system is <a href="auth0.com">Auth0</a>. `./src/services/auth
 The Auth0 JWT includes claims for permissions based on the user's role within the Auth0 system. This project makes use of these claims using the auth.can(permission) method which checks if particular permissions exist within the JWT permissions claim of the currently logged-in user. This method is defined in `./src/services/auth.service.ts` and is then used to enable and disable buttons in `./src/pages/drink-menu/drink-form/drink-form.html`.
 
 ## Testing Endpoints with Postman (under construction) 
-A <a href="https://www.postman.com/">Postman</a> collection is included to test the various endpoints. 
+A <a href="https://www.postman.com/">Postman</a> collection is included in the **Tests** directory. For more information about Postman, click <a href="https://www.postman.com/product/api-client">here</a>.
 
 ## Unit Tests (under construction)
 To be added.
