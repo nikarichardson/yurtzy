@@ -13,6 +13,7 @@ def create_app(test_config=None):
 
     @app.route('/')
     def hello_greeting():
+        """
         excited = os.environ['EXCITED']
         greeting = "Hello" 
         #person = Person(name="Maria", catchphrase="hello!")
@@ -20,6 +21,8 @@ def create_app(test_config=None):
         if excited == 'true': 
             greeting = greeting + "!!!!!"
             return greeting 
+        """
+        return "Welcome to the Yurtzy backend site! 🏕️ "   
         
 
     """
