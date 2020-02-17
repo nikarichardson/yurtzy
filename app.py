@@ -15,7 +15,8 @@ def create_app(test_config=None):
         excited = os.environ['EXCITED']
         greeting = "Hello" 
         person = Person(name="Sara", catchphrase="hello!")
-        db.session.add(venue)
+        #person.insert()
+        db.session.add(person)
         db.session.commit()
         if excited == 'true': 
             greeting = greeting + "!!!!!"
