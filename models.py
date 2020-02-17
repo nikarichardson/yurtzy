@@ -46,8 +46,8 @@ class Person(db.Model):
     the model must have a unique id or null id
     '''
   def insert(self):
-      db.session.add(self)
-      db.session.commit()
+    db.session.add(self)
+    db.session.commit()
 
   '''
   delete()
@@ -55,8 +55,8 @@ class Person(db.Model):
     the model must exist in the database
   '''
   def delete(self):
-        db.session.delete(self)
-        db.session.commit()
+    db.session.delete(self)
+    db.session.commit()
 
   '''
   update()
