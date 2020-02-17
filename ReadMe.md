@@ -127,7 +127,7 @@ RBAC is implemented with <a href="http://www.auth0.com">Auth0</a>. Two sample us
 - Many sites offer similar services. See <a href="http://wwww.recreation.gov">Recreation.gov</a> and <a href="https://www.alltrails.com/?ref=header">AllTrails</a>.
 - The database model has limitations. For examples, `costs` only provides a range of costs for the location, instead of detailed information on the costs for picnicking, the costs for camping sites for a night, etc. 
 - More data could be added. Options like horseback riding, fishing, etc. 
-- Only data for two campsites and one location is provided. Should be expanded to include campsites near the 25 largest urban agglomerations in the U.S., for example. See `docs/urban agglomeratons.txt` for this list of the largest urban sites in 2010, provided by <a href="https://www.currentresults.com/Weather-Extremes/US/largest-cities-list.php">Current Results</a>.
+- Only data for two campsites and one location is provided. Should be expanded to include campsites near the 25 largest urban agglomerations in the U.S., for example. See `docs/urban agglomerations.txt` for this list of the largest urban sites in 2010, provided by <a href="https://www.currentresults.com/Weather-Extremes/US/largest-cities-list.php">Current Results</a>.
 
 ## Credits
 Logos and website created with <a href="https://www.tailorbrands.com/">Tailor Brands</a>. 
