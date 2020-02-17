@@ -7,7 +7,7 @@ from models import setup_db
 def create_app(test_config=None):
 
     app = Flask(__name__)
-    subprocess.call(['./setup.sh'])
+    #subprocess.call(['./setup.sh'])
     setup_db(app)
     CORS(app)
 
