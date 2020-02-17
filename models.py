@@ -39,6 +39,7 @@ class Campsite(db.Model):
 
   ## Boolean Fields/Optional Fields
   image = Column(db.String(120),default=None)  
+  website = Column(db.String(500),default=None)
   description = db.Column(db.String(1000),default=None) 
   costs = db.Column(db.Integer,default=0) 
   yurts_and_cabins = db.Column(db.Boolean,default=False) 
@@ -95,6 +96,7 @@ class Campsite(db.Model):
     return {
       'id': self.id,
       'name': self.name,
+      'website': self.website,
       'address': self.address,
       'distance_from_city': self.distance_from_city,
       'closest_city': self.closest_city,
