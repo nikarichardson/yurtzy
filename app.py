@@ -29,21 +29,32 @@ def create_app(test_config=None):
     def get_campsites():
         return "Not implemented!"
 
+
+    """
+    Retrieves the campsite with the given campsite id.
+    """
     @app.route('/campsites/<int:campsite_id>', methods=['GET'])
     def get_campsites_by_id(campsite_id):
         return "Not implemented!"
 
 
+    """
+    """
     @app.route('/campsites', methods=['POST'])
     def add_campsite():
         return "Not implemented!"
 
 
-    @app.route('/campsites', methods=['PATCH'])
-    def update_campsite():
+    """
+    Allows users to edit the given campsite.
+    """
+    @app.route('/campsites/<int:campsite_id>', methods=['PATCH'])
+    def update_campsite(campsite_id):
         return "Not implemented!"
 
 
+    """
+    """
     @app.route('/campsites/<int:campsite_id>', methods=['DELETE'])
     def delete_campsite(campsite_id):
         return "Not implemented!"
