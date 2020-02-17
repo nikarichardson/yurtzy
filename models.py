@@ -2,6 +2,7 @@ from sqlalchemy import Column, String, create_engine
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, render_template, request, redirect, url_for, abort,jsonify
 import sys 
+from flask_migrate import Migrate
 import os
 import json
 
