@@ -25,15 +25,36 @@ def setup_db(app, database_path=database_path):
 
 
 '''
-Person
+Campsite
 Have title and release year
 '''
-class Person(db.Model):  
-  __tablename__ = 'People'
+class Campsite(db.Model):  
+  __tablename__ = 'Campsite'
 
   id = Column(db.Integer, primary_key=True)
-  name = Column(db.String(120))
-  catchphrase = Column(db.String(120))
+
+  ## Required Fields
+  name = Column(db.String(120),unique=True)
+  address = db.Column(db.String(120),nullable=False)
+  distance_from_city = Column(db.Integer,nullable=False)
+  closest_city = db.Column(db.String(120),nullable=False) 
+
+  ## Boolean Fields/Optional Fields
+  image = Column(db.String(120))  
+  costs = db.Column(db.Integer) 
+  yurts_and_cabins = db.Column(db.Boolean) 
+  bathrooms = db.Column(db.Boolean) 
+  parking = db.Column(db.Boolean) 
+  ada_access = db.Column(db.Boolean) 
+  campfires = db.Column(db.Boolean) 
+  showers = db.Column(db.Boolean) 
+  wifi = db.Column(db.Boolean) 
+  trash_bins = db.Column(db.Boolean) 
+  picnic_area = db.Column(db.Boolean) 
+  pets_allowed = db.Column(db.Boolean)
+  potable_water = db.Column(db.Boolean)  
+  rv_parks = db.Column(db.Boolean) 
+
 
   def __init__(self, name, catchphrase=""):
     self.name = name
