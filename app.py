@@ -22,6 +22,9 @@ def create_app(test_config=None):
             return greeting 
         
 
+    """
+    Gets all campsites organized under listings of nearest urban centers.
+    """ 
     @app.route('/campsites', methods=['GET'])
     def get_campsites():
         return "Not implemented!"
