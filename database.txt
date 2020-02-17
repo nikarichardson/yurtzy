@@ -1,13 +1,16 @@
 INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills,hunting) VALUES (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills,hunting); 
 
 
-INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills,hunting) VALUES ("Oxbow Regional Park","https://www.oregonmetro.gov/parks/oxbow-regional-park","3010 SE Oxbow Pkwy, Gresham, OR 97080",23.8,"Portland","https://www.oregonmetro.gov/sites/default/files/styles/slideshow_compact/public/2017/06/27/oxbow_aerial_1125.jpg?itok=gA6HNf4_","Oxbow Regional Park provides a perfect launch point for swimming, kayaking, rafting or fishing in the majestic Sandy River Gorge.",22,False,True,True,True,True,True,False,True,True,False,False,True,True,True,True,True,True,True,False); 
 
-## Add hiking
-## Add camping 
-## Add swimming
-## Add biking
-## Add kayaking 
-## Add cooking grills
-## Add hunting 
-## Add Website on website (and the rest)
+
+
+INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills,hunting) VALUES ('Oxbow Regional Park','https://tinyurl.com/qwwhv22','3010 SE Oxbow Pkwy, Gresham, OR 97080',23.8,'Portland','https://tinyurl.com/s8yers4','Perfect place for adventuring in the Sandy River Gorge.',22,False,True,True,True,True,True,False,True,True,False,False,True,True,True,True,True,True,True,False); 
+
+
+INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills,hunting) VALUES ('Trillum Lake','https://www.fs.usda.gov/recarea/mthood/recarea/?recid=53634','Highway 26
+Government Camp, Oregon 97028',50,'Portland','https://tinyurl.com/slcnop9','Incredible views of Mount Hood.',50,False,True,True,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,False); 
+
+
+
+## costs only provide a sample of the ranges 
+## could be added horseback riding, fishing,

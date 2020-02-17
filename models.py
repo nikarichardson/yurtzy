@@ -38,9 +38,9 @@ class Campsite(db.Model):
   closest_city = db.Column(db.String(120),nullable=False) 
 
   ## Boolean Fields/Optional Fields
-  image = Column(db.String(120),default=None)  
+  image = Column(db.String(1000),default=None)  
   website = Column(db.String(500),default=None)
-  description = db.Column(db.String(1000),default=None) 
+  description = db.Column(db.String(5000),default=None) 
   costs = db.Column(db.Integer,default=0) 
   yurts_and_cabins = db.Column(db.Boolean,default=False) 
   bathrooms = db.Column(db.Boolean,default=False) 
