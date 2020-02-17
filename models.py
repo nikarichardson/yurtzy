@@ -54,7 +54,10 @@ class Campsite(db.Model):
   pets_allowed = db.Column(db.Boolean,default=False)
   potable_water = db.Column(db.Boolean,default=False)  
   rv_parks = db.Column(db.Boolean,default=False) 
-
+  hiking = db.Column(db.Boolean,default=False) 
+  camping = db.Column(db.Boolean,default=False) 
+  biking = db.Column(db.Boolean,default=False) 
+  kayaking = db.Column(db.Boolean,default=False) 
 
   def __init__(self, name, catchphrase=""):
     self.name = name
@@ -114,6 +117,10 @@ class Campsite(db.Model):
       'picnic area': self.picnic_area,
       'pets allowed': self.pets_allowed,
       'potable water': self.potable_water,
-      'rv parks': self.rv_parks}
+      'rv parks': self.rv_parks,
+      'hiking': self.hiking,
+      'camping': self.camping,
+      'biking': self.biking,
+      'kayaking': self.kayaking}
 
 
