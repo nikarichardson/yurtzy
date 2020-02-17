@@ -18,7 +18,7 @@ def create_app(test_config=None):
         person = Person(name="Sabrina", catchphrase="yo!")
         if excited == 'true': 
             greeting = greeting + "!!!!!"
-            return greeting + person.name 
+            return greeting # + person.name 
 
 
     @app.route('/coolkids')
