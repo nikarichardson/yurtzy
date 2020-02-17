@@ -109,10 +109,10 @@ Errors are returned as JSON objects. See an example error handler below.
 <img src="https://66.media.tumblr.com/5816b11c11188626b84b644b7f00c6c0/590414abc0b7ae51-26/s1280x1920/9bc735d421dd66bb4b6e5797c0df816481412cde.png" width="350" height="300" align="right">
 
 ## Authentication (under construction) 
-The authentication system is Auth0. ./src/services/auth.service.ts contains the logic to direct a user to the Auth0 login page, managing the JWT token upon successful callback, and handle setting and retrieving the token from the local store. This token is then consumed by our DrinkService (./src/services/auth.service.ts) and passed as an Authorization header when making requests to our backend.
+The authentication system is <a href="auth0.com">Auth0</a>. `./src/services/auth.service.ts` contains the logic to direct a user to the Auth0 login page, managing the JWT token upon successful callback, and handle setting and retrieving the token from the local store. This token is then consumed by our DrinkService (`./src/services/auth.service.ts`) and passed as an Authorization header when making requests to our backend.
 
 ## Authorization (under construction) 
-The Auth0 JWT includes claims for permissions based on the user's role within the Auth0 system. This project makes use of these claims using the auth.can(permission) method which checks if particular permissions exist within the JWT permissions claim of the currently logged-in user. This method is defined in ./src/services/auth.service.ts and is then used to enable and disable buttons in ./src/pages/drink-menu/drink-form/drink-form.html.
+The Auth0 JWT includes claims for permissions based on the user's role within the Auth0 system. This project makes use of these claims using the auth.can(permission) method which checks if particular permissions exist within the JWT permissions claim of the currently logged-in user. This method is defined in `./src/services/auth.service.ts` and is then used to enable and disable buttons in `./src/pages/drink-menu/drink-form/drink-form.html`.
 
 ## Testing Endpoints with Postman (under construction) 
 A <a href="https://www.postman.com/">Postman</a> collection is included to test the various endpoints. 
