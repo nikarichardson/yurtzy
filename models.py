@@ -1,10 +1,11 @@
 from sqlalchemy import Column, String, create_engine
 from flask_sqlalchemy import SQLAlchemy
-
+from flask import Flask, render_template, request, redirect, url_for, abort,jsonify
+import sys 
 import os
 import json
 
-#database_path = os.environ.get('DATABASE_URL', None)
+# database_path = os.environ.get('DATABASE_URL', None)
 database_path = 'postgres://kwwzwozzasiqiw:8e70aed4e726e6e2d96cdf380525fa2884689070fdcda2daf3b0c389d879433f@ec2-18-213-176-229.compute-1.amazonaws.com:5432/df2ce01ne4r1gj'
 db = SQLAlchemy()
 
@@ -16,6 +17,7 @@ def setup_db(app, database_path=database_path):
     app.config["SQLALCHEMY_DATABASE_URI"] = database_path
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.app = app
+    migrate = Migrate(app, db)
     db.init_app(app)
     db.create_all()
 
