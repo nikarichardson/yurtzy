@@ -59,9 +59,9 @@ to be completed
 <br/>**Errors:** If no campsite with given id found, aborts in 404 error. If there is an issue with querying and retrieving the campsite, aborts in 422 error.   
 
 ## PATCH /campsites
-<br/>**Description:** Allows users to edit existing campsites. 
+<br/>**Description:** Allows users to edit the given campsite.
 <br/>**Roles:** must be `Contributor` or `Admin` user.
-<br/>**Request Arguments:** None 
+<br/>**Request Arguments:** campsite_id
 <br/>**Returns**:
 ```
 to be completed
