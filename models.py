@@ -41,6 +41,7 @@ class Campsite(db.Model):
 
   ## Boolean Fields/Optional Fields
   image = Column(db.String(120))  
+  description = db.Column(db.String(1000)) 
   costs = db.Column(db.Integer) 
   yurts_and_cabins = db.Column(db.Boolean) 
   bathrooms = db.Column(db.Boolean) 
