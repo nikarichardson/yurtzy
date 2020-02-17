@@ -2,7 +2,7 @@
 <img src="https://66.media.tumblr.com/6849576fe4489f33f25b722b32d95c0e/e89b7ceae0572455-d9/s1280x1920/f6e6a8aa3e4d82d9411b5e7aee2065890a0a8946.png" width="300" height="120" align="left">
 
 ## About 
-Yurtzy🏕️ is an application targeted to urbanites that allows visitors to find campsites near the 25 largest urban agglomerations in the United States.
+Yurtzy🏕️ is an application for urbanites that allows site visitors to find campsites near the 25 largest urban agglomerations in the United States.
 <img src="https://66.media.tumblr.com/0747c4bf4ec67c243ecd2d2b9f612e90/d4d94426805716f4-b5/s1280x1920/79decc3c555719442d33714c45de8ff9e0cd9043.png" align="right" width="350" height="200"> 
 
 ## Website
