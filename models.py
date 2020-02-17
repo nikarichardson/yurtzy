@@ -40,21 +40,21 @@ class Campsite(db.Model):
   closest_city = db.Column(db.String(120),nullable=False) 
 
   ## Boolean Fields/Optional Fields
-  image = Column(db.String(120))  
-  description = db.Column(db.String(1000)) 
-  costs = db.Column(db.Integer) 
-  yurts_and_cabins = db.Column(db.Boolean) 
-  bathrooms = db.Column(db.Boolean) 
-  parking = db.Column(db.Boolean) 
-  ada_access = db.Column(db.Boolean) 
-  campfires = db.Column(db.Boolean) 
-  showers = db.Column(db.Boolean) 
-  wifi = db.Column(db.Boolean) 
-  trash_bins = db.Column(db.Boolean) 
-  picnic_area = db.Column(db.Boolean) 
-  pets_allowed = db.Column(db.Boolean)
-  potable_water = db.Column(db.Boolean)  
-  rv_parks = db.Column(db.Boolean) 
+  image = Column(db.String(120),default=None)  
+  description = db.Column(db.String(1000),default=None) 
+  costs = db.Column(db.Integer,default=0) 
+  yurts_and_cabins = db.Column(db.Boolean,default=False) 
+  bathrooms = db.Column(db.Boolean,default=False) 
+  parking = db.Column(db.Boolean,default=False) 
+  ada_access = db.Column(db.Boolean,default=False) 
+  campfires = db.Column(db.Boolean,default=False) 
+  showers = db.Column(db.Boolean,default=False) 
+  wifi = db.Column(db.Boolean,default=False) 
+  trash_bins = db.Column(db.Boolean,default=False) 
+  picnic_area = db.Column(db.Boolean,default=False) 
+  pets_allowed = db.Column(db.Boolean,default=False)
+  potable_water = db.Column(db.Boolean,default=False)  
+  rv_parks = db.Column(db.Boolean,default=False) 
 
 
   def __init__(self, name, catchphrase=""):
@@ -88,8 +88,32 @@ class Campsite(db.Model):
   def update(self):
     db.session.commit()
 
+  '''
+  format()
+    returns a formatted object containing the values 
+    of the model 
+  '''
   def format(self):
     return {
       'id': self.id,
       'name': self.name,
-      'catchphrase': self.catchphrase}
+      'address': self.address,
+      'distance_from_city': self.distance_from_city,
+      'closest_city': self.closest_city,
+      'image': self.image,
+      'description': self.description,
+      'costs': self.costs,
+      'yurts and cabins': self.yurts_and_cabins,
+      'bathrooms': self.bathrooms,
+      'parking': self.parking,
+      'ada access': self.ada_access,
+      'campfires': self.campfires,
+      'showers': self.showers,
+      'wifi': self.wifi,
+      'trash bins': self.trash_bins,
+      'picnic area': self.picnic_area,
+      'pets allowed': self.pets_allowed,
+      'potable water': self.potable_water,
+      'rv parks': self.rv_parks}
+
+
