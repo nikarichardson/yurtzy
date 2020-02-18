@@ -84,14 +84,14 @@ def create_app(test_config=None):
 			abort(404)
 
 		# retrieve form data
-		name = body.get('name',False) 
-		address = body.get('address',False) 
-		distance_from_city = body.get('distance_from_city',False) 
-		closest_city = body.get('closest_city',False) 
-		image = body.get('image',False)  
-		website = body.get('website',False) 
-		description = body.get('description',False) 
-		costs = body.get('costs',False) 
+		name = body.get('name') 
+		address = body.get('address') 
+		distance_from_city = body.get('distance_from_city') 
+		closest_city = body.get('closest_city') 
+		image = body.get('image')  
+		website = body.get('website') 
+		description = body.get('description') 
+		costs = body.get('costs') 
 		yurts_and_cabins = body.get('yurts_and_cabins',False)  
 		bathrooms = body.get('bathrooms',False) 
 		parking = body.get('parking',False)  
@@ -111,7 +111,6 @@ def create_app(test_config=None):
 		swimming = body.get('swimming',False)  
 		cooking_grills = body.get('cooking_grills',False)  
 		hunting = body.get('hunting',False) 
-
 
 		try:
 			campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
