@@ -130,7 +130,7 @@ def create_app(test_config=None):
 
 			return jsonify({
 				'success': True,
-				'campsites': campsite.format()
+				'campsites': campsite.name #format()
 			})
 		
 
