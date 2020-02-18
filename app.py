@@ -110,7 +110,7 @@ def create_app(test_config=None):
 		kayaking = body.get('kayaking',False) 
 		swimming = body.get('swimming',False)  
 		cooking_grills = body.get('cooking_grills',False)  
-		hunting = body.get('hunting',False) 
+		hunting = body.get('hunting') 
 
 		return jsonify({
 				'success': True,
