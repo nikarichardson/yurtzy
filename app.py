@@ -56,9 +56,11 @@ def create_app(test_config=None):
     """
     @app.route('/campsites/<int:campsite_id>', methods=['GET'])
     def get_campsites_by_id(campsite_id):
+    
         """
         selection = Campsite.query.order_by(Campsite.id).all() 
         campsite = None
+
 
         for item in selection:
             if item.id == campsite_id:
@@ -69,10 +71,10 @@ def create_app(test_config=None):
             'campsite': campsite.format(),
         })
 
+    
         """
-
         try:
-            campsite = Campsite.query.filter(id == campsite_id).all() 
+            campsite = Campsite.query(Campsite).filter(Campsites.id == campsite_id).all() 
 
             if campsite is not None:
                 return jsonify({
@@ -84,6 +86,7 @@ def create_app(test_config=None):
 
         except:
             abort(422)
+    
         
 
 
