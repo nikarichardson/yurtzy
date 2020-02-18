@@ -139,6 +139,9 @@ The link to the **Login** page through Auth0 is <a href="https://yurtzy.auth0.co
 A <a href="https://www.postman.com/">Postman</a> collection is included in the **Tests** directory. For more information about Postman, click <a href="https://www.postman.com/product/api-client">here</a>.
 
 - JWT Token for `Contributor`, who can patch and add campsites: 
+```
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFqbEVSRU5FTlRRMk1qUXlNREF4UVRVMU5EbEVNRFV6T1RoRU56WkJNek13TkRNME1EWkJNdyJ9.eyJpc3MiOiJodHRwczovL3l1cnR6eS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU0ODg3YTNhY2NkODkwZTY4MTRhNTE2IiwiYXVkIjoiY2FtcHNpdGUiLCJpYXQiOjE1ODIwNDk2ODYsImV4cCI6MTU4MjEzNjA4NiwiYXpwIjoiWTJSSDJ3WjVlN09jeXNEMjV2amJiNHYwMjJQTWNmQ2MiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbInBhdGNoOmNhbXBzaXRlcyIsInBvc3Q6Y2FtcHNpdGVzIl19.OmwMwQPJkjplTTgj__dPAWjxlo4tE2_nsuf_r4Xf7feMGA_I0zbWQS1i68ODTPO6LLr51QgdxfAPVZcdrL3RRhRB9PRmRkW0maawQ4uNVKynH9tJiVWn3DhBMs0oZuXPZuNTIkeI6JYQTbGhIm0FHolHBu8SmngNou0ZVAwrv4aFMGGgjebtUE8nGRPMRdzzwyPvail8jLERh06SWEyoz9bzouuqj7UK273doH1SZH4Z_i0Sy6_TsBuFfn6KRW-82Mk6qY3fkaU3DPXLl777McjK0pcBdXw2-SbSxcH-Hi5Hvk_Zv-muzMMaWzgtSS8nSJZRKtMQQPuhz78YEHxJGQ
+```
 (Permissions: `patch:campsites` and `post:campsites`.)
 
 - JWT Token for `Admin`, who can patch, add, *and* delete campsites: 
@@ -147,7 +150,6 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFqbEVSRU5FTlRRMk1qUXlNREF4UVRVMU5E
 ```
 (Permissions: `patch:campsites`,`post:campsites`,`delete:campsites`)
 
-The permission `get:campsites` is included in both tokens for nominal purposes, although it is unused since this is a public endpoint. 
 
 ## Two Sample Insertions
 To fill the default empty database, run `heroku pg:psql postgresql-clear-82843 --app yurtzy` and use the two following commands in SQL.
