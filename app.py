@@ -54,10 +54,8 @@ def create_app(test_config=None):
     """
     @app.route('/campsites/<int:campsite_id>', methods=['GET'])
     def get_campsites_by_id(campsite_id):
-        return 'here'
-        campsite = Campsite.query.get(campsite_id)
         try:
-            campsite = Campsite.query.get(campsite_id)
+            campsite = Campsite.query.filter(Campsite.id == campsite_id).one_or_none()
 
             if campsite is not None:
                 return jsonify({
