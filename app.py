@@ -137,10 +137,11 @@ def create_app(test_config=None):
 				'success': True,
 				'campsites': campsites
 			})
-		"""
+		
 
 		except:
 			abort(422)
+		"""
 	
 	"""
 	Allows users to edit the given campsite.
