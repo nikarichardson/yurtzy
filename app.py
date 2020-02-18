@@ -113,7 +113,6 @@ def create_app(test_config=None):
 		hunting = body.get('hunting',False) 
 
 		try:
-			
 			campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
 			closest_city=closest_city,image=image,website=website,description=description,
 			costs=costs,yurts_and_cabins=yurts_and_cabins,bathrooms=bathrooms,
