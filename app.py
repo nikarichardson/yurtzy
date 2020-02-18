@@ -54,6 +54,7 @@ def create_app(test_config=None):
     """
     @app.route('/campsites/<int:campsite_id>', methods=['GET'])
     def get_campsites_by_id(campsite_id):
+        return campsite_id
         try:
             campsite = Campsite.query.filter(Campsite.id == campsite_id).one_or_none()
 
