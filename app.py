@@ -77,6 +77,7 @@ def create_app(test_config=None):
 	"""
 
 	@app.route('/campsites', methods=['POST'])
+	@requires_auth('post:campsites')
 	def add_campsite():
 		body = request.get_json()
 
@@ -145,6 +146,7 @@ def create_app(test_config=None):
 	Allows users to edit the given campsite.
 	"""
 	@app.route('/campsites/<int:campsite_id>', methods=['PATCH'])
+	@requires_auth('patch:campsites')
 	def update_campsite(campsite_id):
 		body = request.get_json()
 
@@ -227,6 +229,7 @@ def create_app(test_config=None):
 	Delete campsite with the given id. 
 	"""
 	@app.route('/campsites/<int:campsite_id>', methods=['DELETE'])
+	@requires_auth('delete:campsites')
 	def delete_campsite(campsite_id):
 		try:
 			selection = Campsite.query.get(campsite_id)
