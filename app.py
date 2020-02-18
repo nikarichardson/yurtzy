@@ -113,6 +113,7 @@ def create_app(test_config=None):
 		hunting = body.get('hunting',False) 
 
 		try:
+			"""
 			campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
 			closest_city=closest_city,image=image,website=website,description=description,
 			costs=costs,yurts_and_cabins=yurts_and_cabins,bathrooms=bathrooms,
@@ -120,7 +121,7 @@ def create_app(test_config=None):
 			wifi=wifi,trash_bins=trash_bins,picnic_area=picnic_area,pets_allowed=pets_allowed,
 			potable_water=potable_water,rv_parks=rv_parks,hiking=hiking,camping=camping,
 			biking=biking,kayaking=kayaking,swimming=swimming,cooking_grills=cooking_grills,
-			hunting=hunting)
+			hunting=hunting)"""
 
 			#campsite.insert()
 
@@ -130,7 +131,11 @@ def create_app(test_config=None):
 
 			return jsonify({
 				'success': True,
-				'campsite': name #format()
+				'name': name,
+				'address': address,
+				'image': image,
+				'website': website,
+				'hunting': hunting #format()
 			})
 		
 
