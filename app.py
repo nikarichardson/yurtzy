@@ -74,7 +74,7 @@ def create_app(test_config=None):
     
         """
         try:
-            Campsite.query.get(campsite_id)
+            selection = Campsite.query.get(campsite_id)
             #selection = Campsite.filter(Campsite.id == campsite_id).one_or_none()  
 
             if selection is not None:
