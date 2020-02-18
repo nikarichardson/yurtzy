@@ -74,8 +74,7 @@ def create_app(test_config=None):
     
         """
         try:
-            selection = Campsite.query.filter(Campsite.id == campsite_id).one_or_none()  
-            #selection = Campsite.query.filter_by(id=campsite_id).first() 
+            selection = Campsite.query.filter(id == campsite_id).one_or_none()  
 
             if selection is not None:
                 return jsonify({
