@@ -58,11 +58,12 @@ def create_app(test_config=None):
 	def get_campsites_by_id(campsite_id):
 		try:
 			selection = Campsite.query.get(campsite_id)
-		
+			campsite = selection.format() 
+
 			if selection is not None:
 				return jsonify({
 					'success': True,
-					'campsite': selection.format()
+					'campsite': campsite
 				})
 			else:
 				abort(404)

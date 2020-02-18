@@ -154,6 +154,7 @@ class Campsite(db.Model):
       'kayaking': self.kayaking,
       'swimming': self.swimming,
       'cooking_grills': self.cooking_grills,
-      'hunting': self.hunting}
+      'hunting': self.hunting
+    }
 
 
