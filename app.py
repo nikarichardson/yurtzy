@@ -64,9 +64,11 @@ def create_app(test_config=None):
                 campsite = item
 
         return jsonify({
-                    'success': False,
-                'campsite': campsite.format(),
-                })
+            'success': False,
+            'campsite': campsite.format(),
+        })
+
+        """
 
         try:
             campsite = Campsite.query.filter(id == campsite_id).all() 
@@ -81,6 +83,7 @@ def create_app(test_config=None):
 
         except:
             abort(422)
+        """
 
 
     """
