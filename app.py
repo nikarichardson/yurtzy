@@ -62,7 +62,7 @@ def create_app(test_config=None):
 			if selection is not None:
 				return jsonify({
 					'success': True,
-				'campsite': selection.format()
+					'campsite': selection.format()
 				})
 			else:
 				abort(404)
@@ -130,7 +130,7 @@ def create_app(test_config=None):
 
 			return jsonify({
 				'success': True,
-				'campsites': None#campsites
+				'campsites': campsites
 			})
 
 		except:
