@@ -69,7 +69,7 @@ def create_app(test_config=None):
                 })
 
         try:
-            campsite = Campsite.query.filter(Campsite.id == campsite_id).all() 
+            campsite = Campsite.query.filter(id == campsite_id).all() 
 
             if campsite is not None:
                 return jsonify({
@@ -102,7 +102,21 @@ def create_app(test_config=None):
     """
     @app.route('/campsites/<int:campsite_id>', methods=['DELETE'])
     def delete_campsite(campsite_id):
-        return "Not implemented!"
+        try:
+            drink = Campsite.query.filter(Campsite.id == campsite_id).one_or_none()
+
+            if drink is None:
+                abort(404)
+
+            campsite.delete()
+
+            return jsonify({
+                'success': True,
+                'delete': campsite_id,
+            })
+
+    except:
+        abort(422)
 
 
     # Error Handling
