@@ -124,8 +124,8 @@ def create_app(test_config=None):
 
 			campsite.insert()
 			campsites = []
-			for campsite in selection:
-				campsites.append(campsite.format())
+			for item in selection:
+				campsites.append(item.format())
 
 			return jsonify({
 				'success': True,
