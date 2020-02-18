@@ -113,19 +113,6 @@ def create_app(test_config=None):
 		hunting = body.get('hunting',False) 
 
 		
-
-		campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
-			closest_city=closest_city,image=image,website=website,description=description,
-			costs=costs)
-
-		campsite.insert() 
-
-		return jsonify({
-			'success': True,
-			'name': campsite.format() 
-		}) 
-
-		"""
 		try:
 			campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
 			closest_city=closest_city,image=image,website=website,description=description,
@@ -149,7 +136,7 @@ def create_app(test_config=None):
 
 		except:
 			abort(422)
-		"""
+		
 	
 	"""
 	Allows users to edit the given campsite.
