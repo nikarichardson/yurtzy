@@ -117,6 +117,10 @@ def create_app(test_config=None):
 			'name': name
 		}) 
 
+		campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
+			closest_city=closest_city,image=image,website=website,description=description,
+			costs=costs)
+
 		"""
 		try:
 			campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
