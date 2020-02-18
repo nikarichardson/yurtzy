@@ -125,8 +125,7 @@ def create_app(test_config=None):
 
 			#campsite.insert()
 
-			campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
-			closest_city=closest_city,image=image,website=website,description=description,
+			campsite = Campsite(name,address,distance_from_city,closest_city,image,website,description,
 			costs=costs)
 
 			#campsites = []
