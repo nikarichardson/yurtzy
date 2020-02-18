@@ -125,6 +125,10 @@ def create_app(test_config=None):
 
 			#campsite.insert()
 
+			campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
+			closest_city=closest_city,image=image,website=website,description=description,
+			costs=costs)
+
 			#campsites = []
 			#for campsite in selection:
 			#	campsites.append(campsite.format())
@@ -135,6 +139,8 @@ def create_app(test_config=None):
 				'address': address,
 				'image': image,
 				'website': website,
+				'description': description,
+				'costs':costs,
 				'hunting': hunting #format()
 			})
 		
