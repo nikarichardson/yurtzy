@@ -127,10 +127,10 @@ Errors are returned as JSON objects. See an example error handler below.
   
 <img src="https://66.media.tumblr.com/5816b11c11188626b84b644b7f00c6c0/590414abc0b7ae51-26/s1280x1920/9bc735d421dd66bb4b6e5797c0df816481412cde.png" width="350" height="300" align="right">
 
-## Authentication (under construction) 
+## Authentication 
 The authentication system is <a href="auth0.com">Auth0</a>. `./src/services/auth.service.ts` contains the logic to direct a user to the Auth0 login page, managing the JWT token upon successful callback, and handle setting and retrieving the token from the local store. This token is then consumed by our DrinkService (`./src/services/auth.service.ts`) and passed as an Authorization header when making requests to our backend.
 
-## Authorization (under construction) 
+## Authorization 
 The Auth0 JWT includes claims for permissions based on the user's role within the Auth0 system. This project makes use of these claims using the auth.can(permission) method which checks if particular permissions exist within the JWT permissions claim of the currently logged-in user. This method is defined in `./src/services/auth.service.ts` and is then used to enable and disable buttons in `./src/pages/drink-menu/drink-form/drink-form.html`.
 
 The link to the **Login** page through Auth0 is <a href="https://yurtzy.auth0.com/authorize?audience=campsite&response_type=token&client_id=Y2RH2wZ5e7OcysD25vjbb4v022PMcfCc&redirect_uri=https://yurtzy.com/login-success">here</a>.
@@ -139,8 +139,10 @@ The link to the **Login** page through Auth0 is <a href="https://yurtzy.auth0.co
 A <a href="https://www.postman.com/">Postman</a> collection is included in the **Tests** directory. For more information about Postman, click <a href="https://www.postman.com/product/api-client">here</a>.
 
 JWT Token for `Contributor`, who can patch and add campsites:
+(Permissions: `patch:campsites` and `post:campsites`.)
 
 JWT Token for `Admin`, who can patch, add, *and* delete campsites: 
+(Permissions: `patch:campsites`,`post:campsites`,`delete:campsites`)
 
 ## Two Sample Insertions
 To fill the default empty database, run `heroku pg:psql postgresql-clear-82843 --app yurtzy` and use the two following commands in SQL.
