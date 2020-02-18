@@ -114,7 +114,6 @@ def create_app(test_config=None):
 		hunting = body.get('hunting') 
 
 		try:
-			"""
 			campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
 			closest_city=closest_city,image=image,website=website,description=description,
 			costs=costs,yurts_and_cabins=yurts_and_cabins,bathrooms=bathrooms,
@@ -124,7 +123,6 @@ def create_app(test_config=None):
 			biking=biking,kayaking=kayaking,swimming=swimming,cooking_grills=cooking_grills,
 			hunting=hunting)
 			campsite.insert()
-			"""
 
 			campsites = []
 			for campsite in selection:
