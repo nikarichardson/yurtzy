@@ -84,44 +84,46 @@ def create_app(test_config=None):
 			abort(404)
 
 		# retrieve form data
-		name= body.get('name',None) 
-		address = body.get('address',None) 
-		distance_from_city = body.get('distance_from_city',None) 
-		closest_city = body.get('closest_city',None) 
-		image = body.get('image',None)  
-		website = body.get('website',None) 
-		description = body.get('description',None) 
-		costs = body.get('costs',None) 
-		yurts_and_cabins = body.get('yurts_and_cabins',None)  
-		bathrooms = body.get('bathrooms',None) 
-		parking = body.get('parking',None)  
-		ada_access = body.get('ada_access',None) 
-		campfires = body.get('campfires',None) 
-		showers = body.get('showers',None) 
-		wifi = body.get('wifi',None)  
-		trash_bins = body.get('trash_bins',None) 
-		picnic_area = body.get('picnic_area',None) 
-		pets_allowed = body.get('pets_allowed',None) 
-		potable_water = body.get('potable_water',None) 
-		rv_parks = body.get('rv_parks',None) 
-		hiking = body.get('hiking',None) 
-		camping = body.get('camping',None) 
-		biking = body.get('biking',None) 
-		kayaking = body.get('kayaking',None) 
-		swimming = body.get('swimming',None)  
-		cooking_grills = body.get('cooking_grills',None)  
-		hunting = body.get('hunting',None) 
+		name = body.get('name',False) 
+		address = body.get('address',False) 
+		distance_from_city = body.get('distance_from_city',False) 
+		closest_city = body.get('closest_city',False) 
+		image = body.get('image',False)  
+		website = body.get('website',False) 
+		description = body.get('description',False) 
+		costs = body.get('costs',False) 
+		yurts_and_cabins = body.get('yurts_and_cabins',False)  
+		bathrooms = body.get('bathrooms',False) 
+		parking = body.get('parking',False)  
+		ada_access = body.get('ada_access',False) 
+		campfires = body.get('campfires',False) 
+		showers = body.get('showers',False) 
+		wifi = body.get('wifi',False)  
+		trash_bins = body.get('trash_bins',False) 
+		picnic_area = body.get('picnic_area',False) 
+		pets_allowed = body.get('pets_allowed',False) 
+		potable_water = body.get('potable_water',False) 
+		rv_parks = body.get('rv_parks',False) 
+		hiking = body.get('hiking',False) 
+		camping = body.get('camping',False) 
+		biking = body.get('biking',False) 
+		kayaking = body.get('kayaking',False) 
+		swimming = body.get('swimming',False)  
+		cooking_grills = body.get('cooking_grills',False)  
+		hunting = body.get('hunting',False) 
 
-		return jsonify({
-			'success': True,
-			'name': name
-		}) 
+		
 
 		campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
 			closest_city=closest_city,image=image,website=website,description=description,
 			costs=costs)
-		
+
 		campsite.insert() 
+
+		return jsonify({
+			'success': True,
+			'name': campsite.format() 
+		}) 
 
 		"""
 		try:
