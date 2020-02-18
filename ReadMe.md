@@ -147,6 +147,8 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFqbEVSRU5FTlRRMk1qUXlNREF4UVRVMU5E
 ```
 (Permissions: `patch:campsites`,`post:campsites`,`delete:campsites`)
 
+The permission `get:campsites` is included in both tokens for nominal purposes, although it is unused since this is a public endpoint. 
+
 ## Two Sample Insertions
 To fill the default empty database, run `heroku pg:psql postgresql-clear-82843 --app yurtzy` and use the two following commands in SQL.
 
