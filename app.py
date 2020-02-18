@@ -124,9 +124,6 @@ def create_app(test_config=None):
 
 			campsite.insert()
 
-			#campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,closest_city=closest_city,image=image,website=website,description=description,
-			#costs=costs)
-
 			selection = Campsite.query.order_by(Campsite.id).all()
 
 			campsites = []
@@ -148,7 +145,81 @@ def create_app(test_config=None):
 	"""
 	@app.route('/campsites/<int:campsite_id>', methods=['PATCH'])
 	def update_campsite(campsite_id):
-		return "Not implemented!"
+		body = request.get_json()
+
+		# if no form data
+    	if body is None:
+        	abort(404)
+
+		# retrieve form data
+		name = body.get('name') 
+		address = body.get('address') 
+		distance_from_city = body.get('distance_from_city') 
+		closest_city = body.get('closest_city') 
+		image = body.get('image')  
+		website = body.get('website') 
+		description = body.get('description') 
+		costs = body.get('costs') 
+		yurts_and_cabins = body.get('yurts_and_cabins',False)  
+		bathrooms = body.get('bathrooms',False) 
+		parking = body.get('parking',False)  
+		ada_access = body.get('ada_access',False) 
+		campfires = body.get('campfires',False) 
+		showers = body.get('showers',False) 
+		wifi = body.get('wifi',False)  
+		trash_bins = body.get('trash_bins',False) 
+		picnic_area = body.get('picnic_area',False) 
+		pets_allowed = body.get('pets_allowed',False) 
+		potable_water = body.get('potable_water',False) 
+		rv_parks = body.get('rv_parks',False) 
+		hiking = body.get('hiking',False) 
+		camping = body.get('camping',False) 
+		biking = body.get('biking',False) 
+		kayaking = body.get('kayaking',False) 
+		swimming = body.get('swimming',False)  
+		cooking_grills = body.get('cooking_grills',False)  
+		hunting = body.get('hunting',False) 
+
+		try: 
+			# update campsite with form data
+        	campsite =  Campsite.query.get(campsite_id)
+        	campsite.name = name
+        	campsite.address = address
+        	campsite.distance_from_city = distance_from_city
+        	campsite.closest_city = closest_city
+        	campsite.image = image
+        	campsite.website = website
+        	campsite.description = description
+        	campsite.costs = costs
+        	campsite.yurts_and_cabins = yurts_and_cabins
+        	campsite.bathrooms = bathrooms
+        	campsite.parking = parking
+        	campsite.ada_access = ada_access 
+        	campsite.campfires = campfires
+        	campsite.showers = showers
+        	campsite.wifi = wifi
+        	campsite.trash_bins = trash_bins
+        	campsite.picnic_area = picnic_area
+        	campsite.pets_allowed = pets_allowed
+        	campsite.potable_water = potable_water
+        	campsite.rv_parks = rv_parks
+        	campsite.hiking = hiking 
+	        campsite.camping = camping
+	        campsite.biking = biking 
+        	campsite.kayaking = kayaking
+        	campsite.swimming = swimming
+        	campsite.cooking_grills = cooking_grills
+        	campsite.hunting = hunting 
+
+        	campsite.update() 
+
+        	return jsonify({
+          		'success': True,
+          		'campsite': campsite.format()
+        	})
+		
+		except:
+        	abort(422) 
 
 
 	"""
