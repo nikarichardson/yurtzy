@@ -124,7 +124,7 @@ def create_app(test_config=None):
 
 			return jsonify({
 				'success': True,
-				'campsites': campsites
+				'campsites': campsite
 			})
 		
 
