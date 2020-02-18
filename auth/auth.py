@@ -9,7 +9,6 @@ ALGORITHMS = ['RS256']
 API_AUDIENCE = 'campsite'
 
 ## AuthError Exception
-
 '''
 AuthError Exception
 A standardized way to communicate auth failure modes
@@ -25,9 +24,10 @@ class AuthError():
 ## Auth Header
 
 '''
-Obtains the access token from the authorization header. Tries to get the header 
-from the request and returns an error if no header is present. If the header is malformed,
-an authorization error is returned. 
+Obtains the access token from the authorization header.
+Returns error if no header is present.
+If the header is malformed, an authorization error
+is returned. 
 '''
 def get_token_auth_header():
     auth = request.headers.get('Authorization', None)
@@ -35,8 +35,7 @@ def get_token_auth_header():
         return AuthError({
             'code': 'authorization_header_missing',
             'description': 'Authorization header is expected.'
-        }, 401)
-        
+        }, 401)   
 
     parts = auth.split()
     if parts[0].lower() != 'bearer':
@@ -60,9 +59,10 @@ def get_token_auth_header():
     token = parts[1]
     return token
 
+
 '''
-Checks that the required permission is included in the payload. Returns an authorization error if 
-permissions are not included or if the desired permission itself is not included in the payload. 
+Checks that the required permission is included in the payload. 
+Returns an authorization error if permissions are not included.
 '''
 def check_permissions(permission, payload):
     if 'permissions' not in payload:
@@ -79,6 +79,7 @@ def check_permissions(permission, payload):
         }, 401)
     else:
         return True 
+
 
 '''
 Takes a json web token and verifies that it is an Auth0 token with key id with Autho0, decodes the payload
@@ -135,6 +136,7 @@ def verify_decode_jwt(token):
                 'code': 'invalid_header',
                 'description': 'Unable to find the appropriate key.'
             }, 400)
+
 
 """
 Uses the get_token_auth_header method to get the token. Uses the verify_decode_jwt method to decode the jwt.
