@@ -74,7 +74,7 @@ def create_app(test_config=None):
     
         """
         try:
-            selection = Campsite.query.order_by(Campsite.id).filter(Campsite.id == campsite_id).all() 
+            selection = Campsite.query.filter(Campsite.id == campsite_id).one_or_none()  
             #selection = Campsite.query.filter_by(id=campsite_id).first() 
 
             if selection is not None:
@@ -111,12 +111,12 @@ def create_app(test_config=None):
     @app.route('/campsites/<int:campsite_id>', methods=['DELETE'])
     def delete_campsite(campsite_id):
         try:
-            drink = Campsite.query.filter(Campsite.id == campsite_id).one_or_none()
+            selection = Campsite.query.filter(Campsite.id == campsite_id).one_or_none()
 
-            if drink is None:
+            if selection is None:
                 abort(404)
 
-            campsite.delete()
+            selection.delete()
 
             return jsonify({
                 'success': True,
