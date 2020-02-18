@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 import json
 from sqlalchemy import exc
 from models import setup_db, Campsite
-from .auth.auth import AuthError, requires_auth
+from auth.auth import AuthError, requires_auth
 
 
 def create_app(test_config=None):
@@ -17,15 +17,6 @@ def create_app(test_config=None):
 
 	@app.route('/')
 	def hello_greeting():
-		"""
-		excited = os.environ['EXCITED']
-		greeting = "Hello" 
-		#person = Person(name="Maria", catchphrase="hello!")
-		#person.insert()
-		if excited == 'true': 
-			greeting = greeting + "!!!!!"
-			return greeting 
-		"""
 		return "Welcome to the Yurtzy backend site! 🏕️ "   
 		
 
