@@ -30,7 +30,23 @@ def create_app(test_config=None):
     """ 
     @app.route('/campsites', methods=['GET'])
     def get_campsites():
-        return "Not implemented!"
+        try:
+            selection = Campsite.query.order_by(Campsite.id).all()
+
+            if len(selection) == 0:
+                abort(404)
+
+            campsites = []
+            for campsite in selection:
+                campsites.append(campsite.format())
+
+            return jsonify({
+                'success': True,
+                'campsites': campsites
+            })
+
+    except:
+        abort(422)
 
 
     """

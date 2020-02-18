@@ -10,7 +10,3 @@ INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,ima
 INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills,hunting) VALUES ('Trillum Lake','https://www.fs.usda.gov/recarea/mthood/recarea/?recid=53634','Highway 26
 Government Camp, Oregon 97028',50,'Portland','https://tinyurl.com/slcnop9','Incredible views of Mount Hood.',50,False,True,True,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,False); 
 
-
-
-## costs only provide a sample of the ranges 
-## could be added horseback riding, fishing,
