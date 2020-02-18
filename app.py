@@ -112,6 +112,12 @@ def create_app(test_config=None):
 		cooking_grills = body.get('cooking_grills',None)  
 		hunting = body.get('hunting',None) 
 
+		return jsonify({
+			'success': True,
+			'name': name
+		}) 
+
+		"""
 		try:
 			campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
 			closest_city=closest_city,image=image,website=website,description=description,
@@ -131,6 +137,7 @@ def create_app(test_config=None):
 				'success': True,
 				'campsites': campsites
 			})
+		"""
 
 		except:
 			abort(422)
