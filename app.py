@@ -112,6 +112,11 @@ def create_app(test_config=None):
 		cooking_grills = body.get('cooking_grills',False)  
 		hunting = body.get('hunting',False) 
 
+		return jsonify({
+				'success': True,
+				'hunting': hunting
+		})
+
 		
 		try:
 			campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
