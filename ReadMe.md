@@ -133,6 +133,8 @@ The authentication system is <a href="auth0.com">Auth0</a>. `./src/services/auth
 ## Authorization (under construction) 
 The Auth0 JWT includes claims for permissions based on the user's role within the Auth0 system. This project makes use of these claims using the auth.can(permission) method which checks if particular permissions exist within the JWT permissions claim of the currently logged-in user. This method is defined in `./src/services/auth.service.ts` and is then used to enable and disable buttons in `./src/pages/drink-menu/drink-form/drink-form.html`.
 
+The link to the **Login** page through Auth0 is <a href="https://yurtzy.auth0.com/authorize?audience=campsite&response_type=token&client_id=Y2RH2wZ5e7OcysD25vjbb4v022PMcfCc&redirect_uri=https://yurtzy.com/login-success">here</a>.
+
 ## Testing Endpoints with Postman  
 A <a href="https://www.postman.com/">Postman</a> collection is included in the **Tests** directory. For more information about Postman, click <a href="https://www.postman.com/product/api-client">here</a>.
 
