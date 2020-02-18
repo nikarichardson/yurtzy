@@ -1,17 +1,4 @@
-INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills,hunting) VALUES (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills,hunting); 
-
 INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills,hunting) VALUES ('Oxbow Regional Park','https://tinyurl.com/qwwhv22','3010 SE Oxbow Pkwy, Gresham, OR 97080',23.8,'Portland','https://tinyurl.com/s8yers4','Perfect place for adventuring in the Sandy River Gorge.',22,False,True,True,True,True,True,False,True,True,False,False,True,True,True,True,True,True,True,False); 
 
 INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills,hunting) VALUES ('Trillum Lake','https://www.fs.usda.gov/recarea/mthood/recarea/?recid=53634','Highway 26
 Government Camp, Oregon 97028',50,'Portland','https://tinyurl.com/slcnop9','Incredible views of Mount Hood.',50,False,True,True,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,False); 
-
-
-campsite = Campsite(name="Trillum Lake Test",address="Highway 26
-Government Camp, Oregon 97028",distance_from_city=50,
-			closest_city="Portland",image="https://tinyurl.com/slcnop9",website="https://www.fs.usda.gov/recarea/mthood/recarea/?recid=53634",description="Incredible views of Mount Hood.",
-			costs=50,yurts_and_cabins=False,bathrooms=True,
-			parking=True,ada_access=True,campfires=True,showers=True,
-			wifi=False,trash_bins=True,picnic_area=True,pets_allowed=True,
-			potable_water=True,rv_parks=True,hiking=True,camping=True,
-			biking=True,kayaking=True,swimming=True,cooking_grills=True,
-			hunting=False)

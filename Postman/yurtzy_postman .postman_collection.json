@@ -1,7 +1,8 @@
 {
 	"info": {
-		"_postman_id": "53090927-3075-4112-acdb-d5b646aa46e5",
-		"name": "code_cafe_postman",
+		"_postman_id": "70dd0908-070b-4587-9515-030ce1e3adf0",
+		"name": "yurtzy_postman ",
+		"description": "A collection of tests to verify proper behavior for each endpoint of the Yurtzy API, including those that require valid JWT tokens to access.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -9,7 +10,7 @@
 			"name": "public",
 			"item": [
 				{
-					"name": "/drinks",
+					"name": "/campsites",
 					"event": [
 						{
 							"listen": "test",
@@ -20,9 +21,9 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
-									"pm.test(\"value contains drinks array\", function () {",
+									"pm.test(\"value contains campsites array\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"    pm.expect(jsonData.campsites).to.be.an('array')",
 									"});"
 								],
 								"type": "text/javascript"
@@ -33,27 +34,35 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/drinks",
+							"raw": "https://yurtzy.herokuapp.com/campsites",
+							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"yurtzy",
+								"herokuapp",
+								"com"
 							],
 							"path": [
-								"drinks"
+								"campsites"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/drinks-detail",
+					"name": "/campsites/1",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"id": "65a195fa-a734-44b7-a7e0-c629b32d1fbb",
 								"exec": [
-									"pm.test(\"Status code is 401\", function () {",
-									"    pm.response.to.have.status(401);",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains campsite\", function () {",
+									"    var jsonData = pm.response.json();",
+									"     pm.expect(jsonData).to.be.an('object')",
 									"});"
 								],
 								"type": "text/javascript"
@@ -64,19 +73,23 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/drinks-detail",
+							"raw": "https://yurtzy.herokuapp.com/campsites/1",
+							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"yurtzy",
+								"herokuapp",
+								"com"
 							],
 							"path": [
-								"drinks-detail"
+								"campsites",
+								"1"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/drinks",
+					"name": "/campsites",
 					"event": [
 						{
 							"listen": "test",
@@ -95,19 +108,22 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/drinks",
+							"raw": "https://yurtzy.herokuapp.com/campsites",
+							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"yurtzy",
+								"herokuapp",
+								"com"
 							],
 							"path": [
-								"drinks"
+								"campsites"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/drinks/1",
+					"name": "/campsites/1",
 					"event": [
 						{
 							"listen": "test",
@@ -126,12 +142,15 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/drinks/1",
+							"raw": "https://yurtzy.herokuapp.com/campsites/1",
+							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"yurtzy",
+								"herokuapp",
+								"com"
 							],
 							"path": [
-								"drinks",
+								"campsites",
 								"1"
 							]
 						}
@@ -139,7 +158,7 @@
 					"response": []
 				},
 				{
-					"name": "/drinks/1",
+					"name": "/campsites/3",
 					"event": [
 						{
 							"listen": "test",
@@ -158,26 +177,52 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/drinks/1",
+							"raw": "https://yurtzy.herokuapp.com/campsites/3",
+							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"yurtzy",
+								"herokuapp",
+								"com"
 							],
 							"path": [
-								"drinks",
-								"1"
+								"campsites",
+								"3"
 							]
 						}
 					},
 					"response": []
+				}
+			],
+			"description": "The public endpoint for the Yurtzy API allows access to all campsites in the database, with no write permissions. ",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "32527d3d-608b-4135-b80d-34ec7331aa33",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f155a2e4-004c-4bc4-812e-bff1350f3793",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			],
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "barista",
+			"name": "contributor",
 			"item": [
 				{
-					"name": "/drinks",
+					"name": "/campsites",
 					"event": [
 						{
 							"listen": "test",
@@ -188,9 +233,9 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
-									"pm.test(\"value contains drinks array\", function () {",
+									"pm.test(\"value contains campsites array\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"    pm.expect(jsonData.campsites).to.be.an('array')",
 									"});"
 								],
 								"type": "text/javascript"
@@ -211,24 +256,77 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/drinks",
+							"raw": "https://yurtzy.herokuapp.com/campsites",
+							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"yurtzy",
+								"herokuapp",
+								"com"
 							],
 							"path": [
-								"drinks"
+								"campsites"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/drinks-detail",
+					"name": "/campsites/1",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"id": "65a195fa-a734-44b7-a7e0-c629b32d1fbb",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains campsite\", function () {",
+									"    var jsonData = pm.response.json();",
+									"     pm.expect(jsonData).to.be.an('object')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16RXdSVVJFUTBJeE56RXlRakUwTmpRMU1EVkNNVUk0UlVJd01EQkRNVFV6UmtWRk9FWkZNZyJ9.eyJpc3MiOiJodHRwczovL2NvZmZlZXNob3BmbnNkLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTNkZjdmNDgwZDljMjBlOGViMzE0ZTAiLCJhdWQiOiJkcmluayIsImlhdCI6MTU4MTIxMTc1MCwiZXhwIjoxNTgxMjE4OTUwLCJhenAiOiIzUVl4bEdFcjAzMktFOVNKRFNCalJsRmVtQ2lHM3RvYSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.YneRKHB3jpO2HTgOu7uVQndbX5hxAH1D9h20-bAAonuk9JtK23bXTHzEFY5qbF8zxhVrx0Jier6xNpR9PV-YtC_lGsnJIA7H2g-6_f6J2XOSQC7ySxpKdD_iVlshQqDN1J8RC6RnHkIoIMkfXMUcvo7QxSqWh6i_W_MPU_lHd20KBbR2L-7OwMaXngfSOZZbgIsRMWsvGP55SvyBd3KStFQMpKawm1kbBcXkSvquCMpQdmIps9ir6zLilhEq6m050xyc96VKev_6mXsjzg-9WGcPjiGqr7Cz5RFF6_twceBqna_XDpLVj7Kv_H39B79y3osp7njknJkBL82yJlBCvA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://yurtzy.herokuapp.com/campsites/1",
+							"protocol": "https",
+							"host": [
+								"yurtzy",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"campsites",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/campsites",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5050a5b9-2e15-474e-9981-0e61ec8d2ff1",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -244,76 +342,54 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16RXdSVVJFUTBJeE56RXlRakUwTmpRMU1EVkNNVUk0UlVJd01EQkRNVFV6UmtWRk9FWkZNZyJ9.eyJpc3MiOiJodHRwczovL2NvZmZlZXNob3BmbnNkLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTNkZjdmNDgwZDljMjBlOGViMzE0ZTAiLCJhdWQiOiJkcmluayIsImlhdCI6MTU4MTIxMTc1MCwiZXhwIjoxNTgxMjE4OTUwLCJhenAiOiIzUVl4bEdFcjAzMktFOVNKRFNCalJsRmVtQ2lHM3RvYSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.YneRKHB3jpO2HTgOu7uVQndbX5hxAH1D9h20-bAAonuk9JtK23bXTHzEFY5qbF8zxhVrx0Jier6xNpR9PV-YtC_lGsnJIA7H2g-6_f6J2XOSQC7ySxpKdD_iVlshQqDN1J8RC6RnHkIoIMkfXMUcvo7QxSqWh6i_W_MPU_lHd20KBbR2L-7OwMaXngfSOZZbgIsRMWsvGP55SvyBd3KStFQMpKawm1kbBcXkSvquCMpQdmIps9ir6zLilhEq6m050xyc96VKev_6mXsjzg-9WGcPjiGqr7Cz5RFF6_twceBqna_XDpLVj7Kv_H39B79y3osp7njknJkBL82yJlBCvA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{host}}/drinks-detail",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"drinks-detail"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/drinks",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "5050a5b9-2e15-474e-9981-0e61ec8d2ff1",
-								"exec": [
-									"pm.test(\"Status code is 401\", function () {",
-									"    pm.response.to.have.status(401);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16RXdSVVJFUTBJeE56RXlRakUwTmpRMU1EVkNNVUk0UlVJd01EQkRNVFV6UmtWRk9FWkZNZyJ9.eyJpc3MiOiJodHRwczovL2NvZmZlZXNob3BmbnNkLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTNkZjdmNDgwZDljMjBlOGViMzE0ZTAiLCJhdWQiOiJkcmluayIsImlhdCI6MTU4MTIxMTc1MCwiZXhwIjoxNTgxMjE4OTUwLCJhenAiOiIzUVl4bEdFcjAzMktFOVNKRFNCalJsRmVtQ2lHM3RvYSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.YneRKHB3jpO2HTgOu7uVQndbX5hxAH1D9h20-bAAonuk9JtK23bXTHzEFY5qbF8zxhVrx0Jier6xNpR9PV-YtC_lGsnJIA7H2g-6_f6J2XOSQC7ySxpKdD_iVlshQqDN1J8RC6RnHkIoIMkfXMUcvo7QxSqWh6i_W_MPU_lHd20KBbR2L-7OwMaXngfSOZZbgIsRMWsvGP55SvyBd3KStFQMpKawm1kbBcXkSvquCMpQdmIps9ir6zLilhEq6m050xyc96VKev_6mXsjzg-9WGcPjiGqr7Cz5RFF6_twceBqna_XDpLVj7Kv_H39B79y3osp7njknJkBL82yJlBCvA",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFqbEVSRU5FTlRRMk1qUXlNREF4UVRVMU5EbEVNRFV6T1RoRU56WkJNek13TkRNME1EWkJNdyJ9.eyJpc3MiOiJodHRwczovL3l1cnR6eS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU0ODg3YTNhY2NkODkwZTY4MTRhNTE2IiwiYXVkIjoiY2FtcHNpdGUiLCJpYXQiOjE1ODIwNDk2ODYsImV4cCI6MTU4MjEzNjA4NiwiYXpwIjoiWTJSSDJ3WjVlN09jeXNEMjV2amJiNHYwMjJQTWNmQ2MiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbInBhdGNoOmNhbXBzaXRlcyIsInBvc3Q6Y2FtcHNpdGVzIl19.OmwMwQPJkjplTTgj__dPAWjxlo4tE2_nsuf_r4Xf7feMGA_I0zbWQS1i68ODTPO6LLr51QgdxfAPVZcdrL3RRhRB9PRmRkW0maawQ4uNVKynH9tJiVWn3DhBMs0oZuXPZuNTIkeI6JYQTbGhIm0FHolHBu8SmngNou0ZVAwrv4aFMGGgjebtUE8nGRPMRdzzwyPvail8jLERh06SWEyoz9bzouuqj7UK273doH1SZH4Z_i0Sy6_TsBuFfn6KRW-82Mk6qY3fkaU3DPXLl777McjK0pcBdXw2-SbSxcH-Hi5Hvk_Zv-muzMMaWzgtSS8nSJZRKtMQQPuhz78YEHxJGQ",
 									"type": "string"
 								}
 							]
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Barton Park\",\n\t\"website\": \"https://www.clackamas.us/parks/barton.html\",\n\t\"address\": \"150 Beavercreek Road Oregon City, OR 97045\",\n\t\"distance_from_city\": 20,\n\t\"closest_city\": \"Portland\",\n\t\"image\": \"https://tinyurl.com/uagfhj3\",\n\t\"description\": \"A popular local spot on the Clackamas River.\",\n\t\"costs\": 30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{host}}/drinks",
+							"raw": "https://yurtzy.herokuapp.com/campsites",
+							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"yurtzy",
+								"herokuapp",
+								"com"
 							],
 							"path": [
-								"drinks"
+								"campsites"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/drinks/1",
+					"name": "/campsites/2",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"id": "ec1488aa-b4d7-468a-89f5-03484009e69c",
 								"exec": [
-									"pm.test(\"Status code is 401\", function () {",
-									"    pm.response.to.have.status(401);",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
 									"});"
 								],
 								"type": "text/javascript"
@@ -326,28 +402,47 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16RXdSVVJFUTBJeE56RXlRakUwTmpRMU1EVkNNVUk0UlVJd01EQkRNVFV6UmtWRk9FWkZNZyJ9.eyJpc3MiOiJodHRwczovL2NvZmZlZXNob3BmbnNkLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTNkZjdmNDgwZDljMjBlOGViMzE0ZTAiLCJhdWQiOiJkcmluayIsImlhdCI6MTU4MTIxMTc1MCwiZXhwIjoxNTgxMjE4OTUwLCJhenAiOiIzUVl4bEdFcjAzMktFOVNKRFNCalJsRmVtQ2lHM3RvYSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.YneRKHB3jpO2HTgOu7uVQndbX5hxAH1D9h20-bAAonuk9JtK23bXTHzEFY5qbF8zxhVrx0Jier6xNpR9PV-YtC_lGsnJIA7H2g-6_f6J2XOSQC7ySxpKdD_iVlshQqDN1J8RC6RnHkIoIMkfXMUcvo7QxSqWh6i_W_MPU_lHd20KBbR2L-7OwMaXngfSOZZbgIsRMWsvGP55SvyBd3KStFQMpKawm1kbBcXkSvquCMpQdmIps9ir6zLilhEq6m050xyc96VKev_6mXsjzg-9WGcPjiGqr7Cz5RFF6_twceBqna_XDpLVj7Kv_H39B79y3osp7njknJkBL82yJlBCvA",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFqbEVSRU5FTlRRMk1qUXlNREF4UVRVMU5EbEVNRFV6T1RoRU56WkJNek13TkRNME1EWkJNdyJ9.eyJpc3MiOiJodHRwczovL3l1cnR6eS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU0ODg3YTNhY2NkODkwZTY4MTRhNTE2IiwiYXVkIjoiY2FtcHNpdGUiLCJpYXQiOjE1ODIwNDk2ODYsImV4cCI6MTU4MjEzNjA4NiwiYXpwIjoiWTJSSDJ3WjVlN09jeXNEMjV2amJiNHYwMjJQTWNmQ2MiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbInBhdGNoOmNhbXBzaXRlcyIsInBvc3Q6Y2FtcHNpdGVzIl19.OmwMwQPJkjplTTgj__dPAWjxlo4tE2_nsuf_r4Xf7feMGA_I0zbWQS1i68ODTPO6LLr51QgdxfAPVZcdrL3RRhRB9PRmRkW0maawQ4uNVKynH9tJiVWn3DhBMs0oZuXPZuNTIkeI6JYQTbGhIm0FHolHBu8SmngNou0ZVAwrv4aFMGGgjebtUE8nGRPMRdzzwyPvail8jLERh06SWEyoz9bzouuqj7UK273doH1SZH4Z_i0Sy6_TsBuFfn6KRW-82Mk6qY3fkaU3DPXLl777McjK0pcBdXw2-SbSxcH-Hi5Hvk_Zv-muzMMaWzgtSS8nSJZRKtMQQPuhz78YEHxJGQ",
 									"type": "string"
 								}
 							]
 						},
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Trillum Lake Campground\",\n\t\"website\": \"https://www.fs.usda.gov/recarea/mthood/recarea/?recid=53634\",\n\t\"address\": \"Highway 26 Government Camp, Oregon 97028\",\n\t\"distance_from_city\": 50,\n\t\"closest_city\": \"Portland\",\n\t\"image\": \"https://tinyurl.com/slcnop9\",\n\t\"description\": \"Incredible views of Mount Hood.\",\n\t\"costs\": 50\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{host}}/drinks/1",
+							"raw": "https://yurtzy.herokuapp.com/campsites/2",
+							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"yurtzy",
+								"herokuapp",
+								"com"
 							],
 							"path": [
-								"drinks",
-								"1"
+								"campsites",
+								"2"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/drinks/1",
+					"name": "/campsites/3",
 					"event": [
 						{
 							"listen": "test",
@@ -368,7 +463,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16RXdSVVJFUTBJeE56RXlRakUwTmpRMU1EVkNNVUk0UlVJd01EQkRNVFV6UmtWRk9FWkZNZyJ9.eyJpc3MiOiJodHRwczovL2NvZmZlZXNob3BmbnNkLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTNkZjdmNDgwZDljMjBlOGViMzE0ZTAiLCJhdWQiOiJkcmluayIsImlhdCI6MTU4MTIxMTc1MCwiZXhwIjoxNTgxMjE4OTUwLCJhenAiOiIzUVl4bEdFcjAzMktFOVNKRFNCalJsRmVtQ2lHM3RvYSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRyaW5rcy1kZXRhaWwiXX0.YneRKHB3jpO2HTgOu7uVQndbX5hxAH1D9h20-bAAonuk9JtK23bXTHzEFY5qbF8zxhVrx0Jier6xNpR9PV-YtC_lGsnJIA7H2g-6_f6J2XOSQC7ySxpKdD_iVlshQqDN1J8RC6RnHkIoIMkfXMUcvo7QxSqWh6i_W_MPU_lHd20KBbR2L-7OwMaXngfSOZZbgIsRMWsvGP55SvyBd3KStFQMpKawm1kbBcXkSvquCMpQdmIps9ir6zLilhEq6m050xyc96VKev_6mXsjzg-9WGcPjiGqr7Cz5RFF6_twceBqna_XDpLVj7Kv_H39B79y3osp7njknJkBL82yJlBCvA",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFqbEVSRU5FTlRRMk1qUXlNREF4UVRVMU5EbEVNRFV6T1RoRU56WkJNek13TkRNME1EWkJNdyJ9.eyJpc3MiOiJodHRwczovL3l1cnR6eS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU0ODg3YTNhY2NkODkwZTY4MTRhNTE2IiwiYXVkIjoiY2FtcHNpdGUiLCJpYXQiOjE1ODIwNDk2ODYsImV4cCI6MTU4MjEzNjA4NiwiYXpwIjoiWTJSSDJ3WjVlN09jeXNEMjV2amJiNHYwMjJQTWNmQ2MiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbInBhdGNoOmNhbXBzaXRlcyIsInBvc3Q6Y2FtcHNpdGVzIl19.OmwMwQPJkjplTTgj__dPAWjxlo4tE2_nsuf_r4Xf7feMGA_I0zbWQS1i68ODTPO6LLr51QgdxfAPVZcdrL3RRhRB9PRmRkW0maawQ4uNVKynH9tJiVWn3DhBMs0oZuXPZuNTIkeI6JYQTbGhIm0FHolHBu8SmngNou0ZVAwrv4aFMGGgjebtUE8nGRPMRdzzwyPvail8jLERh06SWEyoz9bzouuqj7UK273doH1SZH4Z_i0Sy6_TsBuFfn6KRW-82Mk6qY3fkaU3DPXLl777McjK0pcBdXw2-SbSxcH-Hi5Hvk_Zv-muzMMaWzgtSS8nSJZRKtMQQPuhz78YEHxJGQ",
 									"type": "string"
 								}
 							]
@@ -376,19 +471,23 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/drinks/1",
+							"raw": "https://yurtzy.herokuapp.com/campsites/3",
+							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"yurtzy",
+								"herokuapp",
+								"com"
 							],
 							"path": [
-								"drinks",
-								"1"
+								"campsites",
+								"3"
 							]
 						}
 					},
 					"response": []
 				}
 			],
+			"description": "A contributor can edit or add campsites. ",
 			"auth": {
 				"type": "bearer",
 				"bearer": [
@@ -424,10 +523,10 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "manager",
+			"name": "admin",
 			"item": [
 				{
-					"name": "/drinks",
+					"name": "/campsites",
 					"event": [
 						{
 							"listen": "test",
@@ -438,9 +537,9 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
-									"pm.test(\"value contains drinks array\", function () {",
+									"pm.test(\"value contains campsites array\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"    pm.expect(jsonData.campsites).to.be.an('array')",
 									"});"
 								],
 								"type": "text/javascript"
@@ -461,19 +560,22 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/drinks",
+							"raw": "https://yurtzy.herokuapp.com/campsites",
+							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"yurtzy",
+								"herokuapp",
+								"com"
 							],
 							"path": [
-								"drinks"
+								"campsites"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/drinks-detail",
+					"name": "/campsites/1",
 					"event": [
 						{
 							"listen": "test",
@@ -484,9 +586,9 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
-									"pm.test(\"value contains drinks array\", function () {",
+									"pm.test(\"value contains campsite\", function () {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.drinks).to.be.an('array')",
+									"     pm.expect(jsonData).to.be.an('object')",
 									"});"
 								],
 								"type": "text/javascript"
@@ -507,19 +609,23 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/drinks-detail",
+							"raw": "https://yurtzy.herokuapp.com/campsites/1",
+							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"yurtzy",
+								"herokuapp",
+								"com"
 							],
 							"path": [
-								"drinks-detail"
+								"campsites",
+								"1"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/drinks",
+					"name": "/campsites",
 					"event": [
 						{
 							"listen": "test",
@@ -540,7 +646,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16RXdSVVJFUTBJeE56RXlRakUwTmpRMU1EVkNNVUk0UlVJd01EQkRNVFV6UmtWRk9FWkZNZyJ9.eyJpc3MiOiJodHRwczovL2NvZmZlZXNob3BmbnNkLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTNkZjc5YzJhYjhhYzBlODY5Yzg0Y2YiLCJhdWQiOiJkcmluayIsImlhdCI6MTU4MTIxMTg2NCwiZXhwIjoxNTgxMjE5MDY0LCJhenAiOiIzUVl4bEdFcjAzMktFOVNKRFNCalJsRmVtQ2lHM3RvYSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRyaW5rcyIsImdldDpkcmlua3MtZGV0YWlsIiwicGF0Y2g6ZHJpbmtzICIsInBvc3Q6ZHJpbmtzIl19.ch3Zrrb3Mi0rKLDulfo15i8HNDSV90-y8U3JMe-ATaOVESSiDEZo2lD6LuVI3cMu5z60LQK6iRiegriCySDrUtH5nBhd5fDRfwFrC3W8-aen9TuAt6alSkce_pzSl4fRDDhpVYiVVaYx1oHl5vKCFXTX0gLcmnJT-qbaheZklQ5N-CPolHW2owZx3ooexjfHF4tmWbee_Xyyhs_35-dlUzFj3DvxDrlhdUiXQbZi-a5KY0l5kcHchGiyG1wH68qMx0_6hlZO1mfXqzmkUrPkmVs0jPR97H6y3b0tCZnO5X9vjBwOqmBKzoGf2aojpp4GCd4PRRFiCrpT2mnUNZn3jQ",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFqbEVSRU5FTlRRMk1qUXlNREF4UVRVMU5EbEVNRFV6T1RoRU56WkJNek13TkRNME1EWkJNdyJ9.eyJpc3MiOiJodHRwczovL3l1cnR6eS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU0ODg3NjhhYzUyMjcwZTY0N2E1NmMxIiwiYXVkIjoiY2FtcHNpdGUiLCJpYXQiOjE1ODIwNDk5NzcsImV4cCI6MTU4MjEzNjM3NywiYXpwIjoiWTJSSDJ3WjVlN09jeXNEMjV2amJiNHYwMjJQTWNmQ2MiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpjYW1wc2l0ZXMiLCJwYXRjaDpjYW1wc2l0ZXMiLCJwb3N0OmNhbXBzaXRlcyJdfQ.oUlS9wYy9sULwqrE6nd0ZwyOnREOFDzwU-MaRDHL1tIl9kztSN5qdBiTxTJS1r92NceWOqpN3RTFC7AOL3NbqdB5t26D1tWwrzlmaqojJC9fK3wFRaryrZ2Rcb8W0f84wGd59jtPjHDm_JuEAZSddZbSTWrOhVJyKXlYTQCG011W1kaQf2AG3iIi5B3_imG32Jvtr0k02vYLgk_fwR2KTs8C6T2FGZps_bpCuB3tVb2HIYreg0BD8yc_43gzMC-YS2Sx8cAsiKoUARINkKdGcWfsXIcvjJwIjzKy8KD3I9ZtwNUdJ7pVySgD9c9DvQx8Txf7dBxMQZ8L-pU8XaIZQg",
 									"type": "string"
 								}
 							]
@@ -556,22 +662,25 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Blue Drink\",\n    \"recipe\": [{\n    \t\"color\": \"blue\",\n        \"name\": \"Water\",\n        \"parts\": 1\n    },{\n    \t\"color\": \"white\",\n        \"name\": \"Foam\",\n        \"parts\": 2\n    }]\n}\n"
+							"raw": "{\n\t\"name\": \"Barton Park Campground\",\n\t\"website\": \"https://www.clackamas.us/parks/barton.html\",\n\t\"address\": \"150 Beavercreek Road Oregon City, OR 97045\",\n\t\"distance_from_city\": 20,\n\t\"closest_city\": \"Portland\",\n\t\"image\": \"https://tinyurl.com/uagfhj3\",\n\t\"description\": \"A popular local spot on the Clackamas River.\",\n\t\"costs\": 30\n}\n"
 						},
 						"url": {
-							"raw": "{{host}}/drinks",
+							"raw": "https://yurtzy.herokuapp.com/campsites",
+							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"yurtzy",
+								"herokuapp",
+								"com"
 							],
 							"path": [
-								"drinks"
+								"campsites"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/drinks/1",
+					"name": "/campsites/2",
 					"event": [
 						{
 							"listen": "test",
@@ -580,11 +689,6 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains drinks array\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.drinks).to.be.an('array')",
 									"});"
 								],
 								"type": "text/javascript"
@@ -597,7 +701,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16RXdSVVJFUTBJeE56RXlRakUwTmpRMU1EVkNNVUk0UlVJd01EQkRNVFV6UmtWRk9FWkZNZyJ9.eyJpc3MiOiJodHRwczovL2NvZmZlZXNob3BmbnNkLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTNkZjc5YzJhYjhhYzBlODY5Yzg0Y2YiLCJhdWQiOiJkcmluayIsImlhdCI6MTU4MTIxMTg2NCwiZXhwIjoxNTgxMjE5MDY0LCJhenAiOiIzUVl4bEdFcjAzMktFOVNKRFNCalJsRmVtQ2lHM3RvYSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRyaW5rcyIsImdldDpkcmlua3MtZGV0YWlsIiwicGF0Y2g6ZHJpbmtzICIsInBvc3Q6ZHJpbmtzIl19.ch3Zrrb3Mi0rKLDulfo15i8HNDSV90-y8U3JMe-ATaOVESSiDEZo2lD6LuVI3cMu5z60LQK6iRiegriCySDrUtH5nBhd5fDRfwFrC3W8-aen9TuAt6alSkce_pzSl4fRDDhpVYiVVaYx1oHl5vKCFXTX0gLcmnJT-qbaheZklQ5N-CPolHW2owZx3ooexjfHF4tmWbee_Xyyhs_35-dlUzFj3DvxDrlhdUiXQbZi-a5KY0l5kcHchGiyG1wH68qMx0_6hlZO1mfXqzmkUrPkmVs0jPR97H6y3b0tCZnO5X9vjBwOqmBKzoGf2aojpp4GCd4PRRFiCrpT2mnUNZn3jQ",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFqbEVSRU5FTlRRMk1qUXlNREF4UVRVMU5EbEVNRFV6T1RoRU56WkJNek13TkRNME1EWkJNdyJ9.eyJpc3MiOiJodHRwczovL3l1cnR6eS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU0ODg3NjhhYzUyMjcwZTY0N2E1NmMxIiwiYXVkIjoiY2FtcHNpdGUiLCJpYXQiOjE1ODIwNDk5NzcsImV4cCI6MTU4MjEzNjM3NywiYXpwIjoiWTJSSDJ3WjVlN09jeXNEMjV2amJiNHYwMjJQTWNmQ2MiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpjYW1wc2l0ZXMiLCJwYXRjaDpjYW1wc2l0ZXMiLCJwb3N0OmNhbXBzaXRlcyJdfQ.oUlS9wYy9sULwqrE6nd0ZwyOnREOFDzwU-MaRDHL1tIl9kztSN5qdBiTxTJS1r92NceWOqpN3RTFC7AOL3NbqdB5t26D1tWwrzlmaqojJC9fK3wFRaryrZ2Rcb8W0f84wGd59jtPjHDm_JuEAZSddZbSTWrOhVJyKXlYTQCG011W1kaQf2AG3iIi5B3_imG32Jvtr0k02vYLgk_fwR2KTs8C6T2FGZps_bpCuB3tVb2HIYreg0BD8yc_43gzMC-YS2Sx8cAsiKoUARINkKdGcWfsXIcvjJwIjzKy8KD3I9ZtwNUdJ7pVySgD9c9DvQx8Txf7dBxMQZ8L-pU8XaIZQg",
 									"type": "string"
 								}
 							]
@@ -613,23 +717,26 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Amazing Blue\"\n}"
+							"raw": "{\n\t\"name\": \"Trillum Lake Mount Hood\",\n\t\"website\": \"https://www.fs.usda.gov/recarea/mthood/recarea/?recid=53634\",\n\t\"address\": \"Highway 26 Government Camp, Oregon 97028\",\n\t\"distance_from_city\": 50,\n\t\"closest_city\": \"Portland\",\n\t\"image\": \"https://tinyurl.com/slcnop9\",\n\t\"description\": \"Incredible views of Mount Hood.\",\n\t\"costs\": 50\n}\n"
 						},
 						"url": {
-							"raw": "{{host}}/drinks/1",
+							"raw": "https://yurtzy.herokuapp.com/campsites/2",
+							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"yurtzy",
+								"herokuapp",
+								"com"
 							],
 							"path": [
-								"drinks",
-								"1"
+								"campsites",
+								"2"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "/drinks/1",
+					"name": "/campsites/4",
 					"event": [
 						{
 							"listen": "test",
@@ -650,7 +757,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik16RXdSVVJFUTBJeE56RXlRakUwTmpRMU1EVkNNVUk0UlVJd01EQkRNVFV6UmtWRk9FWkZNZyJ9.eyJpc3MiOiJodHRwczovL2NvZmZlZXNob3BmbnNkLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZTNkZjc5YzJhYjhhYzBlODY5Yzg0Y2YiLCJhdWQiOiJkcmluayIsImlhdCI6MTU4MTIxMTg2NCwiZXhwIjoxNTgxMjE5MDY0LCJhenAiOiIzUVl4bEdFcjAzMktFOVNKRFNCalJsRmVtQ2lHM3RvYSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmRyaW5rcyIsImdldDpkcmlua3MtZGV0YWlsIiwicGF0Y2g6ZHJpbmtzICIsInBvc3Q6ZHJpbmtzIl19.ch3Zrrb3Mi0rKLDulfo15i8HNDSV90-y8U3JMe-ATaOVESSiDEZo2lD6LuVI3cMu5z60LQK6iRiegriCySDrUtH5nBhd5fDRfwFrC3W8-aen9TuAt6alSkce_pzSl4fRDDhpVYiVVaYx1oHl5vKCFXTX0gLcmnJT-qbaheZklQ5N-CPolHW2owZx3ooexjfHF4tmWbee_Xyyhs_35-dlUzFj3DvxDrlhdUiXQbZi-a5KY0l5kcHchGiyG1wH68qMx0_6hlZO1mfXqzmkUrPkmVs0jPR97H6y3b0tCZnO5X9vjBwOqmBKzoGf2aojpp4GCd4PRRFiCrpT2mnUNZn3jQ",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFqbEVSRU5FTlRRMk1qUXlNREF4UVRVMU5EbEVNRFV6T1RoRU56WkJNek13TkRNME1EWkJNdyJ9.eyJpc3MiOiJodHRwczovL3l1cnR6eS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU0ODg3NjhhYzUyMjcwZTY0N2E1NmMxIiwiYXVkIjoiY2FtcHNpdGUiLCJpYXQiOjE1ODIwNDk5NzcsImV4cCI6MTU4MjEzNjM3NywiYXpwIjoiWTJSSDJ3WjVlN09jeXNEMjV2amJiNHYwMjJQTWNmQ2MiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpjYW1wc2l0ZXMiLCJwYXRjaDpjYW1wc2l0ZXMiLCJwb3N0OmNhbXBzaXRlcyJdfQ.oUlS9wYy9sULwqrE6nd0ZwyOnREOFDzwU-MaRDHL1tIl9kztSN5qdBiTxTJS1r92NceWOqpN3RTFC7AOL3NbqdB5t26D1tWwrzlmaqojJC9fK3wFRaryrZ2Rcb8W0f84wGd59jtPjHDm_JuEAZSddZbSTWrOhVJyKXlYTQCG011W1kaQf2AG3iIi5B3_imG32Jvtr0k02vYLgk_fwR2KTs8C6T2FGZps_bpCuB3tVb2HIYreg0BD8yc_43gzMC-YS2Sx8cAsiKoUARINkKdGcWfsXIcvjJwIjzKy8KD3I9ZtwNUdJ7pVySgD9c9DvQx8Txf7dBxMQZ8L-pU8XaIZQg",
 									"type": "string"
 								}
 							]
@@ -658,19 +765,23 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/drinks/1",
+							"raw": "https://yurtzy.herokuapp.com/campsites/4",
+							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"yurtzy",
+								"herokuapp",
+								"com"
 							],
 							"path": [
-								"drinks",
-								"1"
+								"campsites",
+								"4"
 							]
 						}
 					},
 					"response": []
 				}
 			],
+			"description": "An admin can edit, update, and delete campsites. ",
 			"auth": {
 				"type": "bearer",
 				"bearer": [
@@ -730,7 +841,7 @@
 	],
 	"variable": [
 		{
-			"id": "7da0fa13-ecd9-4d7d-8e38-fde2c81cfdaf",
+			"id": "5d8d249c-c93d-4323-831f-fd150649ba01",
 			"key": "host",
 			"value": "localhost:5000",
 			"type": "string"

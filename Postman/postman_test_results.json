@@ -1,0 +1,518 @@
+{
+	"id": "7e907041-e238-45c0-989f-6e38c4ab6e4d",
+	"name": "yurtzy_postman ",
+	"timestamp": "2020-02-18T19:04:33.353Z",
+	"collection_id": "70dd0908-070b-4587-9515-030ce1e3adf0",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 21,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "ead4976b-f635-4ccf-8e20-7e2918655ad7",
+			"name": "/campsites",
+			"url": "https://yurtzy.herokuapp.com/campsites",
+			"time": 441,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains campsites array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains campsites array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				441
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains campsites array": true
+				}
+			]
+		},
+		{
+			"id": "fd6ec21b-4c5a-4962-b4df-6d5203600a9b",
+			"name": "/campsites/1",
+			"url": "https://yurtzy.herokuapp.com/campsites/1",
+			"time": 108,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains campsite": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains campsite": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				108
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains campsite": true
+				}
+			]
+		},
+		{
+			"id": "321cc280-6ba4-456d-acad-15975b0d0704",
+			"name": "/campsites",
+			"url": "https://yurtzy.herokuapp.com/campsites",
+			"time": 97,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				97
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "aab20aaa-c2be-4c64-abf8-b0710ae34884",
+			"name": "/campsites/1",
+			"url": "https://yurtzy.herokuapp.com/campsites/1",
+			"time": 98,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				98
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "57a86b8b-23a2-46fe-8a6a-93e8ca3a95c0",
+			"name": "/campsites/3",
+			"url": "https://yurtzy.herokuapp.com/campsites/3",
+			"time": 99,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				99
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "a1568b49-8b57-4e66-8fef-ac50f4ea92a7",
+			"name": "/campsites",
+			"url": "https://yurtzy.herokuapp.com/campsites",
+			"time": 105,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains campsites array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains campsites array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				105
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains campsites array": true
+				}
+			]
+		},
+		{
+			"id": "550df179-b56d-4fc5-8cc9-a42fb1fafc93",
+			"name": "/campsites/1",
+			"url": "https://yurtzy.herokuapp.com/campsites/1",
+			"time": 108,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains campsite": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains campsite": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				108
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains campsite": true
+				}
+			]
+		},
+		{
+			"id": "efc614ae-5110-444a-8937-770fc0705e17",
+			"name": "/campsites",
+			"url": "https://yurtzy.herokuapp.com/campsites",
+			"time": 532,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				532
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "0e987161-5f30-428f-bb15-1e356782d30a",
+			"name": "/campsites/2",
+			"url": "https://yurtzy.herokuapp.com/campsites/2",
+			"time": 579,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				579
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "46f1bbac-fa96-4ee1-9794-69520941b8a6",
+			"name": "/campsites/3",
+			"url": "https://yurtzy.herokuapp.com/campsites/3",
+			"time": 475,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {
+				"Status code is 401": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				475
+			],
+			"allTests": [
+				{
+					"Status code is 401": true
+				}
+			]
+		},
+		{
+			"id": "055b9f0c-b0d1-4853-8105-9651676e2990",
+			"name": "/campsites",
+			"url": "https://yurtzy.herokuapp.com/campsites",
+			"time": 110,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains campsites array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains campsites array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				110
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains campsites array": true
+				}
+			]
+		},
+		{
+			"id": "fc4f5e4a-71d0-4292-afe1-b9bc7df86a9d",
+			"name": "/campsites/1",
+			"url": "https://yurtzy.herokuapp.com/campsites/1",
+			"time": 108,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"value contains campsite": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"value contains campsite": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				108
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"value contains campsite": true
+				}
+			]
+		},
+		{
+			"id": "e98ee2f1-723c-40a8-b0ae-951a535127e7",
+			"name": "/campsites",
+			"url": "https://yurtzy.herokuapp.com/campsites",
+			"time": 411,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				411
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "6db95084-17d9-470f-b8ad-a513712177e5",
+			"name": "/campsites/2",
+			"url": "https://yurtzy.herokuapp.com/campsites/2",
+			"time": 771,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				771
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "9ebfe951-a5d3-465b-8a92-da0b87db5adb",
+			"name": "/campsites/4",
+			"url": "https://yurtzy.herokuapp.com/campsites/4",
+			"time": 580,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				580
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"collection": {
+		"requests": [
+			{
+				"id": "ead4976b-f635-4ccf-8e20-7e2918655ad7",
+				"method": "GET"
+			},
+			{
+				"id": "fd6ec21b-4c5a-4962-b4df-6d5203600a9b",
+				"method": "GET"
+			},
+			{
+				"id": "321cc280-6ba4-456d-acad-15975b0d0704",
+				"method": "POST"
+			},
+			{
+				"id": "aab20aaa-c2be-4c64-abf8-b0710ae34884",
+				"method": "PATCH"
+			},
+			{
+				"id": "57a86b8b-23a2-46fe-8a6a-93e8ca3a95c0",
+				"method": "DELETE"
+			},
+			{
+				"id": "a1568b49-8b57-4e66-8fef-ac50f4ea92a7",
+				"method": "GET"
+			},
+			{
+				"id": "550df179-b56d-4fc5-8cc9-a42fb1fafc93",
+				"method": "GET"
+			},
+			{
+				"id": "efc614ae-5110-444a-8937-770fc0705e17",
+				"method": "POST"
+			},
+			{
+				"id": "0e987161-5f30-428f-bb15-1e356782d30a",
+				"method": "PATCH"
+			},
+			{
+				"id": "46f1bbac-fa96-4ee1-9794-69520941b8a6",
+				"method": "DELETE"
+			},
+			{
+				"id": "055b9f0c-b0d1-4853-8105-9651676e2990",
+				"method": "GET"
+			},
+			{
+				"id": "fc4f5e4a-71d0-4292-afe1-b9bc7df86a9d",
+				"method": "GET"
+			},
+			{
+				"id": "e98ee2f1-723c-40a8-b0ae-951a535127e7",
+				"method": "POST"
+			},
+			{
+				"id": "6db95084-17d9-470f-b8ad-a513712177e5",
+				"method": "PATCH"
+			},
+			{
+				"id": "9ebfe951-a5d3-465b-8a92-da0b87db5adb",
+				"method": "DELETE"
+			}
+		]
+	}
+}
