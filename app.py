@@ -49,7 +49,7 @@ def create_app(test_config=None):
     def get_campsites_by_id(campsite_id):
         try:
             selection = Campsite.query.get(campsite_id)
-            campsite = selection.format() 
+            campsite = selection.format()
 
             if selection is not None:
                 return jsonify({
@@ -61,9 +61,9 @@ def create_app(test_config=None):
 
         except:
             abort(422)
-    
+
     """
-    Adds a new campsite to the database. 
+    Adds a new campsite to the database.
     """
     @app.route('/campsites', methods=['POST'])
     @requires_auth('post:campsites')
@@ -75,49 +75,49 @@ def create_app(test_config=None):
             abort(404)
 
         # retrieve form data
-        name = body.get('name') 
-        address = body.get('address') 
-        distance_from_city = body.get('distance_from_city') 
-        closest_city = body.get('closest_city') 
-        image = body.get('image')  
-        website = body.get('website') 
-        description = body.get('description') 
-        costs = body.get('costs') 
-        yurts_and_cabins = body.get('yurts_and_cabins', False)  
-        bathrooms = body.get('bathrooms', False) 
-        parking = body.get('parking', False)  
-        ada_access = body.get('ada_access', False) 
-        campfires = body.get('campfires', False) 
-        showers = body.get('showers', False) 
-        wifi = body.get('wifi', False)  
-        trash_bins = body.get('trash_bins', False) 
-        picnic_area = body.get('picnic_area', False) 
-        pets_allowed = body.get('pets_allowed', False) 
-        potable_water = body.get('potable_water', False) 
-        rv_parks = body.get('rv_parks', False) 
-        hiking = body.get('hiking', False) 
-        camping = body.get('camping', False) 
-        biking = body.get('biking', False) 
-        kayaking = body.get('kayaking', False) 
-        swimming = body.get('swimming', False)  
-        cooking_grills = body.get('cooking_grills', False)  
-        hunting = body.get('hunting', False) 
+        name = body.get('name')
+        address = body.get('address')
+        distance_from_city = body.get('distance_from_city')
+        closest_city = body.get('closest_city')
+        image = body.get('image')
+        website = body.get('website')
+        description = body.get('description')
+        costs = body.get('costs')
+        yurts_and_cabins = body.get('yurts_and_cabins', False)
+        bathrooms = body.get('bathrooms', False)
+        parking = body.get('parking', False)
+        ada_access = body.get('ada_access', False)
+        campfires = body.get('campfires', False)
+        showers = body.get('showers', False)
+        wifi = body.get('wifi', False)
+        trash_bins = body.get('trash_bins', False)
+        picnic_area = body.get('picnic_area', False)
+        pets_allowed = body.get('pets_allowed', False)
+        potable_water = body.get('potable_water', False)
+        rv_parks = body.get('rv_parks', False)
+        hiking = body.get('hiking', False)
+        camping = body.get('camping', False)
+        biking = body.get('biking', False)
+        kayaking = body.get('kayaking', False)
+        swimming = body.get('swimming', False)
+        cooking_grills = body.get('cooking_grills', False)
+        hunting = body.get('hunting', False)
 
         try:
-            campsite = Campsite(name=name, address=address, 
-                                distance_from_city=distance_from_city, 
+            campsite = Campsite(name=name, address=address,
+                                distance_from_city=distance_from_city,
                                 closest_city=closest_city, image=image,
                                 website=website, description=description,
                                 costs=costs, yurts_and_cabins=yurts_and_cabins,
-                                bathrooms=bathrooms, parking=parking, 
-                                ada_access=ada_access, campfires=campfires, 
+                                bathrooms=bathrooms, parking=parking,
+                                ada_access=ada_access, campfires=campfires,
                                 showers=showers, wifi=wifi,
                                 trash_bins=trash_bins, picnic_area=picnic_area,
-                                pets_allowed=pets_allowed, 
-                                potable_water=potable_water, rv_parks=rv_parks,  
-                                hiking=hiking, camping=camping, biking=biking, 
+                                pets_allowed=pets_allowed,
+                                potable_water=potable_water, rv_parks=rv_parks,
+                                hiking=hiking, camping=camping, biking=biking,
                                 kayaking=kayaking, swimming=swimming,
-                                cooking_grills=cooking_grills, hunting=hunting) 
+                                cooking_grills=cooking_grills, hunting=hunting)
 
             campsite.insert()
 
@@ -148,36 +148,36 @@ def create_app(test_config=None):
             abort(404)
 
         # retrieve form data
-        name = body.get('name') 
-        address = body.get('address') 
-        distance_from_city = body.get('distance_from_city') 
-        closest_city = body.get('closest_city') 
-        image = body.get('image')  
-        website = body.get('website') 
-        description = body.get('description') 
-        costs = body.get('costs') 
-        yurts_and_cabins = body.get('yurts_and_cabins', False)  
-        bathrooms = body.get('bathrooms', False) 
-        parking = body.get('parking', False)  
-        ada_access = body.get('ada_access', False) 
-        campfires = body.get('campfires', False) 
-        showers = body.get('showers', False) 
-        wifi = body.get('wifi', False)  
-        trash_bins = body.get('trash_bins', False) 
-        picnic_area = body.get('picnic_area', False) 
-        pets_allowed = body.get('pets_allowed', False) 
-        potable_water = body.get('potable_water', False) 
-        rv_parks = body.get('rv_parks', False) 
-        hiking = body.get('hiking', False) 
-        camping = body.get('camping', False) 
-        biking = body.get('biking', False) 
-        kayaking = body.get('kayaking', False) 
-        swimming = body.get('swimming', False)  
-        cooking_grills = body.get('cooking_grills', False)  
-        hunting = body.get('hunting', False) 
+        name = body.get('name')
+        address = body.get('address')
+        distance_from_city = body.get('distance_from_city')
+        closest_city = body.get('closest_city')
+        image = body.get('image')
+        website = body.get('website')
+        description = body.get('description')
+        costs = body.get('costs')
+        yurts_and_cabins = body.get('yurts_and_cabins', False)
+        bathrooms = body.get('bathrooms', False)
+        parking = body.get('parking', False)
+        ada_access = body.get('ada_access', False)
+        campfires = body.get('campfires', False)
+        showers = body.get('showers', False)
+        wifi = body.get('wifi', False)
+        trash_bins = body.get('trash_bins', False)
+        picnic_area = body.get('picnic_area', False)
+        pets_allowed = body.get('pets_allowed', False)
+        potable_water = body.get('potable_water', False)
+        rv_parks = body.get('rv_parks', False)
+        hiking = body.get('hiking', False)
+        camping = body.get('camping', False)
+        biking = body.get('biking', False)
+        kayaking = body.get('kayaking', False)
+        swimming = body.get('swimming', False)
+        cooking_grills = body.get('cooking_grills', False)
+        hunting = body.get('hunting', False)
 
         # update campsite with form data
-        try: 
+        try:
             campsite = Campsite.query.get(campsite_id)
             campsite.name = name
             campsite.address = address
@@ -190,7 +190,7 @@ def create_app(test_config=None):
             campsite.yurts_and_cabins = yurts_and_cabins
             campsite.bathrooms = bathrooms
             campsite.parking = parking
-            campsite.ada_access = ada_access 
+            campsite.ada_access = ada_access
             campsite.campfires = campfires
             campsite.showers = showers
             campsite.wifi = wifi
@@ -199,15 +199,15 @@ def create_app(test_config=None):
             campsite.pets_allowed = pets_allowed
             campsite.potable_water = potable_water
             campsite.rv_parks = rv_parks
-            campsite.hiking = hiking 
+            campsite.hiking = hiking
             campsite.camping = camping
-            campsite.biking = biking 
+            campsite.biking = biking
             campsite.kayaking = kayaking
             campsite.swimming = swimming
             campsite.cooking_grills = cooking_grills
-            campsite.hunting = hunting 
+            campsite.hunting = hunting
 
-            campsite.update() 
+            campsite.update()
 
             return jsonify({
                 'success': True,
@@ -215,10 +215,10 @@ def create_app(test_config=None):
             })
 
         except:
-            abort(422) 
+            abort(422)
 
     """
-    Delete campsite with the given id. 
+    Delete campsite with the given id.
     """
     @app.route('/campsites/<int:campsite_id>', methods=['DELETE'])
     @requires_auth('delete:campsites')
