@@ -113,6 +113,7 @@ def create_app(test_config=None):
 		hunting = body.get('hunting',False) 
 
 		try:
+			
 			campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
 			closest_city=closest_city,image=image,website=website,description=description,
 			costs=costs,yurts_and_cabins=yurts_and_cabins,bathrooms=bathrooms,
@@ -123,13 +124,17 @@ def create_app(test_config=None):
 			hunting=hunting)
 
 			campsite.insert()
-			campsites = []
-			for item in selection:
-				campsites.append(item.format())
+
+			#campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,closest_city=closest_city,image=image,website=website,description=description,
+			#costs=costs)
+
+			#campsites = []
+			#for campsite in selection:
+			#	campsites.append(campsite.format())
 
 			return jsonify({
 				'success': True,
-				'campsites': campsites
+				'campsite': campsite.format()
 			})
 		
 
