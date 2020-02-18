@@ -64,9 +64,34 @@ class Campsite(db.Model):
   cooking_grills = db.Column(db.Boolean) 
   hunting = db.Column(db.Boolean) 
 
-  def __init__(self, name, catchphrase=""):
+  def __init__(self, name, address,distance_from_city,closest_city,image,website,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,camping,biking,kayaking,swimming,cooking_grills,hunting):
     self.name = name
-    self.catchphrase = catchphrase
+    self.address = address
+    self.distance_from_city = distance_from_city
+    self.closest_city = closest_city
+    self.costs = costs 
+    self.description = description 
+    self.website = website 
+    self.image = image
+    self.yurts_and_cabins = yurts_and_cabins
+    self.bathrooms = bathrooms
+    self.parking = parking 
+    self.ada_access = ada_access
+    self.campfires = campfires
+    self.showers = showers
+    self.wifi = wifi 
+    self.trash_bins = trash_bins
+    self.picnic_area = picnic_area
+    self.pets_allowed = pets_allowed
+    self.potable_water = potable_water
+    self.rv_parks = rv_parks
+    self.hiking = hiking
+    self.camping = camping
+    self.biking = biking
+    self.kayaking = kayaking 
+    self.swimming = swimming
+    self.cooking_grills
+    self.hunting = hunting 
 
   '''
   insert()
