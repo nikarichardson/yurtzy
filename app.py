@@ -128,8 +128,8 @@ def create_app(test_config=None):
                 campsites.append(campsite.format())
 
             return jsonify({
-            'success': True,
-            'campsites': campsites
+                'success': True,
+                'campsites': campsites
             })
 
         except:
