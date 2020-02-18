@@ -45,8 +45,8 @@ def create_app(test_config=None):
                 'campsites': campsites
             })
 
-    except:
-        abort(422)
+        except:
+            abort(422)
 
 
     """
