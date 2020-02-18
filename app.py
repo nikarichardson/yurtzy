@@ -56,7 +56,14 @@ def create_app(test_config=None):
     """
     @app.route('/campsites/<int:campsite_id>', methods=['GET'])
     def get_campsites_by_id(campsite_id):
-        #return str(campsite_id)
+        selection = Campsite.query.order_by(Campsite.id).fetchone() 
+
+        return jsonify({
+                    'success': False,
+                'campsite id': str(campsite_id),
+                'other id': selection.id,
+                'other stuff': selection.format() 
+                })
 
         try:
             campsite = Campsite.query.filter(Campsite.id == campsite_id).all() 
@@ -64,7 +71,7 @@ def create_app(test_config=None):
             if campsite is not None:
                 return jsonify({
                     'success': True,
-                'campsite': campsite
+                'campsite': campsite.format()
                 })
             else:
                 abort(404)
