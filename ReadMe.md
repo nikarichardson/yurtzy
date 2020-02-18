@@ -155,7 +155,12 @@ Government Camp, Oregon 97028',50,'Portland','https://tinyurl.com/slcnop9','Incr
 ```
 
 ## Unit Tests
-Unit tests can be run with the commands `python3 test_flaskr.py`. Only unit tests for the two public endpoints are provided. All endpoints requiring authentication can be tested in Postman according to the instructions above. 
+Unit tests can be run with the commands `python3 test_flaskr.py`. Before you run the unit tests, set up the environment variable: 
+```
+DATABASE_URL="postgres://kwwzwozzasiqiw:8e70aed4e726e6e2d96cdf380525fa2884689070fdcda2daf3b0c389d879433f@ec2-18-213-176-229.compute-1.amazonaws.com:5432/df2ce01ne4r1gj"
+export DATABASE_URL
+```
+Only unit tests for the two public endpoints are provided. All endpoints requiring authentication can be tested in Postman according to the instructions above. 
 
 ## Login 
 RBAC is implemented with <a href="http://www.auth0.com">Auth0</a>. As noted, two sample users have been added, one with an `Admin` role and one with a `Contributor` role.  
