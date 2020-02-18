@@ -94,16 +94,6 @@ class Campsite(db.Model):
   def update(self):
     db.session.commit()
 
-
-  '''
-  query_filter()
-    updates a new model into a database
-    the model must exist in the database
-  '''
-  #def query_filter(filter):
-  #  selection = db.session.query(Campsite).filter(Campsite.id == campsite_id).all() 
-  #  return selection 
-
   '''
   format()
     returns a formatted object containing the values 
