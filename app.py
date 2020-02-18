@@ -75,7 +75,7 @@ def create_app(test_config=None):
 
 	"""
 	Adds a new campsite to the database. 
-	"""
+	
 	@app.route('/campsites', methods=['POST'])
 	def add_campsite():
 		body = request.get_json()
@@ -135,6 +135,7 @@ def create_app(test_config=None):
 
 		except:
 			abort(422)
+	"""
 
 
 	"""
