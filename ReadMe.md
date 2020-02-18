@@ -133,14 +133,37 @@ The authentication system is <a href="auth0.com">Auth0</a>. `./src/services/auth
 ## Authorization (under construction) 
 The Auth0 JWT includes claims for permissions based on the user's role within the Auth0 system. This project makes use of these claims using the auth.can(permission) method which checks if particular permissions exist within the JWT permissions claim of the currently logged-in user. This method is defined in `./src/services/auth.service.ts` and is then used to enable and disable buttons in `./src/pages/drink-menu/drink-form/drink-form.html`.
 
-## Testing Endpoints with Postman (under construction) 
+The link to the **Login** page through Auth0 is <a href="https://yurtzy.auth0.com/authorize?audience=campsite&response_type=token&client_id=Y2RH2wZ5e7OcysD25vjbb4v022PMcfCc&redirect_uri=https://yurtzy.com/login-success">here</a>.
+
+## Testing Endpoints with Postman  
 A <a href="https://www.postman.com/">Postman</a> collection is included in the **Tests** directory. For more information about Postman, click <a href="https://www.postman.com/product/api-client">here</a>.
 
-## Unit Tests (under construction)
-To be added.
+JWT Token for `Contributor`, who can patch and add campsites:
+
+JWT Token for `Admin`, who can patch, add, *and* delete campsites: 
+
+## Two Sample Insertions
+To fill the default empty database, run `heroku pg:psql postgresql-clear-82843 --app yurtzy` and use the two following commands in SQL.
+
+```
+INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills,hunting) VALUES ('Oxbow Regional Park','https://tinyurl.com/qwwhv22','3010 SE Oxbow Pkwy, Gresham, OR 97080',23.8,'Portland','https://tinyurl.com/s8yers4','Perfect place for adventuring in the Sandy River Gorge.',22,False,True,True,True,True,True,False,True,True,False,False,True,True,True,True,True,True,True,False);
+```
+
+```
+INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills,hunting) VALUES ('Trillum Lake','https://www.fs.usda.gov/recarea/mthood/recarea/?recid=53634','Highway 26
+Government Camp, Oregon 97028',50,'Portland','https://tinyurl.com/slcnop9','Incredible views of Mount Hood.',50,False,True,True,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,False);
+```
+
+## Unit Tests
+Unit tests can be run with the commands `python3 test_flaskr.py`. Before you run the unit tests, set up the environment variable: 
+```
+DATABASE_URL="postgres://kwwzwozzasiqiw:8e70aed4e726e6e2d96cdf380525fa2884689070fdcda2daf3b0c389d879433f@ec2-18-213-176-229.compute-1.amazonaws.com:5432/df2ce01ne4r1gj"
+export DATABASE_URL
+```
+Only unit tests for the two public endpoints are provided. All endpoints requiring authentication can be tested in Postman according to the instructions above. 
 
 ## Login 
-RBAC is implemented with <a href="http://www.auth0.com">Auth0</a>. Two sample users have been added, one with an `Admin` role and one with a `Contributor` role.  
+RBAC is implemented with <a href="http://www.auth0.com">Auth0</a>. As noted, two sample users have been added, one with an `Admin` role and one with a `Contributor` role.  
 
 ## Overview of Drawbacks 
 - Many sites offer similar services. See <a href="http://wwww.recreation.gov">Recreation.gov</a> and <a href="https://www.alltrails.com/?ref=header">AllTrails</a>.
