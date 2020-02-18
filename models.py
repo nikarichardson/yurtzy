@@ -27,7 +27,7 @@ Campsite
 Have title and release year
 '''
 class Campsite(db.Model):  
-  #__tablename__ = 'Campsite'
+  __tablename__ = 'Campsite'
 
   id = Column(db.Integer, primary_key=True,unique=True)
   #id = Column(Integer().with_variant(Integer, "sqlite"), primary_key=True)
