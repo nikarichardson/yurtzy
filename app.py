@@ -6,6 +6,8 @@ from flask_sqlalchemy import SQLAlchemy
 import json
 from sqlalchemy import exc
 from models import setup_db, Campsite
+from .auth.auth import AuthError, requires_auth
+
 
 def create_app(test_config=None):
 
