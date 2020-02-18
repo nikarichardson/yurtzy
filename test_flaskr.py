@@ -64,8 +64,8 @@ class CampsiteTestCase(unittest.TestCase):
         data = json.loads(res.data)
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
-        self.assertTrue(data['campsites'])
-        self.assertTrue(len(data['campsites']))
+        self.assertTrue(data['campsite'])
+        self.assertTrue(len(data['campsite']))
 
 
 # Make the tests conveniently executable
