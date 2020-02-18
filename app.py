@@ -56,6 +56,7 @@ def create_app(test_config=None):
     """
     @app.route('/campsites/<int:campsite_id>', methods=['GET'])
     def get_campsites_by_id(campsite_id):
+        """
         selection = Campsite.query.order_by(Campsite.id).all() 
         campsite = None
 
@@ -83,7 +84,7 @@ def create_app(test_config=None):
 
         except:
             abort(422)
-        """
+        
 
 
     """
