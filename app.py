@@ -54,7 +54,19 @@ def create_app(test_config=None):
     """
     @app.route('/campsites/<int:campsite_id>', methods=['GET'])
     def get_campsites_by_id(campsite_id):
-        return "Not implemented!"
+        try:
+            campsite = Campsite.query.get(campsite_id)
+
+            if campsite is not None:
+                return jsonify({
+                    'success': True,
+                'campsite': campsite
+                })
+            else:
+                abort(404)
+
+        except:
+            abort(422)
 
 
     """
