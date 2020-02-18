@@ -29,7 +29,7 @@ Have title and release year
 class Campsite(db.Model):  
   __tablename__ = 'Campsite'
 
-  id = Column(db.Integer, primary_key=True)
+  id = Column(db.Integer, primary_key=True,unique=True)
 
   ## Required Fields
   name = Column(db.String(120),unique=True)
