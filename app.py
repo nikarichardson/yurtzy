@@ -2,7 +2,9 @@ import os
 import subprocess
 from flask import Flask, request, jsonify, abort
 from flask_cors import CORS
+from flask_sqlalchemy import SQLAlchemy
 import json
+from sqlalchemy import exc
 from models import setup_db, Campsite
 
 def create_app(test_config=None):
@@ -54,10 +56,9 @@ def create_app(test_config=None):
     """
     @app.route('/campsites/<int:campsite_id>', methods=['GET'])
     def get_campsites_by_id(campsite_id):
-        return 'not working'
-        """
+
         try:
-            campsite = Campsite.query.filter(Campsite.id == 1).one_or_none()
+            campsite = Campsite.query.filter(Campsite.id == campsite).all() 
 
             if campsite is not None:
                 return jsonify({
@@ -69,7 +70,6 @@ def create_app(test_config=None):
 
         except:
             abort(422)
-        """
 
 
     """
