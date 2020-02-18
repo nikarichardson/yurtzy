@@ -127,13 +127,15 @@ def create_app(test_config=None):
 			#campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,closest_city=closest_city,image=image,website=website,description=description,
 			#costs=costs)
 
-			#campsites = []
-			#for campsite in selection:
-			#	campsites.append(campsite.format())
+			selection = Campsite.query.order_by(Campsite.id).all()
+
+			campsites = []
+			for item in selection:
+				campsites.append(item.format())
 
 			return jsonify({
 				'success': True,
-				'campsite': campsite.format()
+				'campsite': campsites
 			})
 		
 
