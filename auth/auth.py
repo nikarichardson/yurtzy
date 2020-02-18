@@ -8,11 +8,14 @@ AUTH0_DOMAIN = 'yurtzy.auth0.com'
 ALGORITHMS = ['RS256']
 API_AUDIENCE = 'campsite'
 
-## AuthError Exception
+
+# AuthError Exception
 '''
 AuthError Exception
 A standardized way to communicate auth failure modes
 '''
+
+
 class AuthError():
     def __init__(self, error, status_code):
         self.error = error
@@ -21,21 +24,22 @@ class AuthError():
         abort(status_code)
 
 
-## Auth Header
-
+# Auth Header
 '''
 Obtains the access token from the authorization header.
 Returns error if no header is present.
 If the header is malformed, an authorization error
-is returned. 
+is returned.
 '''
+
+
 def get_token_auth_header():
     auth = request.headers.get('Authorization', None)
     if not auth:
         return AuthError({
             'code': 'authorization_header_missing',
             'description': 'Authorization header is expected.'
-        }, 401)   
+        }, 401)
 
     parts = auth.split()
     if parts[0].lower() != 'bearer':
@@ -61,9 +65,11 @@ def get_token_auth_header():
 
 
 '''
-Checks that the required permission is included in the payload. 
+Checks that the required permission is included in the payload.
 Returns an authorization error if permissions are not included.
 '''
+
+
 def check_permissions(permission, payload):
     if 'permissions' not in payload:
         return AuthError({
@@ -78,13 +84,15 @@ def check_permissions(permission, payload):
             'description': 'User does not have this permission.'
         }, 401)
     else:
-        return True 
+        return True
 
 
 '''
-Takes a json web token and verifies that it is an Auth0 token with key id with Autho0, decodes the payload
-from the token, validates the claims, and returns the decoded payload.  
+Takes a json web token and verifies that it is an Auth0 token.
+Decodes the payload from the token and returns payload.
 '''
+
+
 def verify_decode_jwt(token):
     jsonurl = urlopen(f'https://{AUTH0_DOMAIN}/.well-known/jwks.json')
     jwks = json.loads(jsonurl.read())
@@ -125,7 +133,7 @@ def verify_decode_jwt(token):
         except jwt.JWTClaimsError:
             return AuthError({
                 'code': 'invalid_claims',
-                'description': 'Incorrect claims. Please, check the audience and issuer.'
+                'description': 'Incorrect claims.'
             }, 401)
         except Exception:
             return AuthError({
@@ -139,10 +147,11 @@ def verify_decode_jwt(token):
 
 
 """
-Uses the get_token_auth_header method to get the token. Uses the verify_decode_jwt method to decode the jwt.
-Validates claims with the check_permissions method and returns the decorator. 
+Uses the get_token_auth_header method to get the token.
 """
-def requires_auth(permission=''): # default to empty string, will be 
+
+
+def requires_auth(permission=''):
     def requires_auth_decorator(f):
         @wraps(f)
         def wrapper(*args, **kwargs):
@@ -155,4 +164,4 @@ def requires_auth(permission=''): # default to empty string, will be
             return f(*args, **kwargs)
 
         return wrapper
-    return requires_auth_decorator 
+    return requires_auth_decorator
