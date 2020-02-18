@@ -118,8 +118,8 @@ def create_app(test_config=None):
                 'delete': campsite_id,
             })
 
-    except:
-        abort(422)
+        except:
+            abort(422)
 
 
     # Error Handling
