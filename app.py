@@ -83,6 +83,7 @@ def create_app(test_config=None):
         if body is None:
             abort(404)
 
+        # retrieve form data
         name=body.get('name') 
         address = body.get('address') 
         distance_from_city = body.get('distance_from_city') 
@@ -131,8 +132,8 @@ def create_app(test_config=None):
             'campsites': campsites
             })
 
-    except:
-        abort(422)
+        except:
+            abort(422)
 
 
     """
