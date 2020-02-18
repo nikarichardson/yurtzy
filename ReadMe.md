@@ -6,7 +6,7 @@ Yurtzy🏕️ is an application for urbanites that allows site visitors to find 
 <img src="https://66.media.tumblr.com/0747c4bf4ec67c243ecd2d2b9f612e90/d4d94426805716f4-b5/s1280x1920/79decc3c555719442d33714c45de8ff9e0cd9043.png" align="right" width="350" height="200"> 
 
 ## Website
-The site is live at <a href="http://www.yurtzy.com">Yurtzy.com</a>. This is the official site. Not all functionalities are fully integrated with the frontend. The `backend site` is hosted through Heroku at <a href="https://yurtzy.herokuapp.com/">yurtzy.herokuapp.com</a>. Essentially, the `backend site`</a> only returns JSON objects for each endpoint. For more views of the site, you can also look at the `Screenshots` folder. 
+The site is live at <a href="http://www.yurtzy.com">Yurtzy.com</a>. This is the official site. Frontend and backend are not integrated yet. The `backend site` is hosted through Heroku at <a href="https://yurtzy.herokuapp.com/">yurtzy.herokuapp.com</a>. Essentially, the `backend site`</a> only returns JSON objects for each endpoint. For more views of the site, you can also look at the `Screenshots` folder. 
 
 ## Installing Dependencies
 Use `pip3 install requirements.txt` to download the requirements for this app. It is recommended to use a <a href="https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/">virtual environment</a>. The file `setup.sh` contains all of the environment variables. 
