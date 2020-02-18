@@ -44,8 +44,12 @@ All visitors may access the public **GET /campsites** endpoint.
 <br/>**Request Arguments:** None
 <br/>**Returns**:
 ```
-to be completed
-```
+{
+  'success': True,
+  'campsites': campsites
+}
+``` 
+where campsites is an array containing the formatted data of all the campsites in the database.
 <br/>**Errors:** If no campsites found, aborts in 404 error. If there is an issue with querying and retrieving the campsites, aborts in 422 error. 
 
 ## GET /campsites/<int:campsite_id>/
@@ -54,8 +58,12 @@ to be completed
 <br/>**Request Arguments:** campsite_id
 <br/>**Returns**:
 ```
-to be completed
+{
+  'success': True,
+  'campsite': campsite
+}
 ```
+where campsite is the formatted data of the campsite with the given campsite id. 
 <br/>**Errors:** If no campsite with given id found, aborts in 404 error. If there is an issue with querying and retrieving the campsite, aborts in 422 error.   
 
 ## PATCH /campsites/int:campsite_id
@@ -64,8 +72,12 @@ to be completed
 <br/>**Request Arguments:** campsite_id
 <br/>**Returns**:
 ```
-to be completed
+{
+  'success': True,
+  'campsite': campsite.format()
+}
 ```
+where campsite is the object representing the model that has been updated according to form data. 
 <br/>**Errors:** If an error has arisen in attempting to edit an existing campsite, it will abort in 422 error. If no campsite with the id has been found, it will abort in a 404 error. 
 
 ## POST /campsites
@@ -74,8 +86,12 @@ to be completed
 <br/>**Request Arguments:** None 
 <br/>**Returns**:
 ```
-to be completed
+{
+  'success': True,
+  'campsite': campsites
+}
 ```
+where campsites is an array of the formatted data of each campsite in the database. 
 <br/>**Errors:** If a new campsite cannot be added to the datbase, it aborts in a 422 error.
 
 ## DELETE /campsites/<int:campsite_id>
@@ -84,8 +100,12 @@ to be completed
 <br/>**Request Arguments:** campsite_id
 <br/>**Returns**:
 ```
-to be completed
+{
+  'success': True,
+  'delete': campsite_id,
+}
 ```
+where *campsite_id* holds the id of the successfully deleted campsite. 
 <br/>**Errors:** If no such campsite has been found, it will abort in a 404 error. If there is a problem implementing the successful deletion of the campsite through the database connection, it will result in a 422 error.
 
 ## Error Handling
@@ -103,7 +123,6 @@ Errors are returned as JSON objects. See an example error handler below.
 - **404:** Resource Not Found
 - **422:** Not Processable 
 - **500:** Internal Server Error
-- **416:** Range Not Satisfiable 
 
   
 <img src="https://66.media.tumblr.com/5816b11c11188626b84b644b7f00c6c0/590414abc0b7ae51-26/s1280x1920/9bc735d421dd66bb4b6e5797c0df816481412cde.png" width="350" height="300" align="right">
