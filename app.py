@@ -74,7 +74,7 @@ def create_app(test_config=None):
     
         """
         try:
-            campsite = Campsite.query(Campsite).filter(Campsites.id == campsite_id).all() 
+            campsite = Campsite.query.filter(Campsites.id == campsite_id).all() 
 
             if campsite is not None:
                 return jsonify({
