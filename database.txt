@@ -10,6 +10,11 @@ INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,ima
 INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills,hunting) VALUES ('Trillum Lake','https://www.fs.usda.gov/recarea/mthood/recarea/?recid=53634','Highway 26
 Government Camp, Oregon 97028',50,'Portland','https://tinyurl.com/slcnop9','Incredible views of Mount Hood.',50,False,True,True,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,False); 
 
+
+
+INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs) VALUES ('Trillum Lake','https://www.fs.usda.gov/recarea/mthood/recarea/?recid=53634','Highway 26
+Government Camp, Oregon 97028',50,'Portland','https://tinyurl.com/slcnop9','Incredible views of Mount Hood.',50); 
+
 {
     "title": "Blue Drink",
     "recipe": [{
@@ -22,6 +27,15 @@ Government Camp, Oregon 97028',50,'Portland','https://tinyurl.com/slcnop9','Incr
         "parts": 2
     }]
 }
+
+campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
+			closest_city=closest_city,image=image,website=website,description=description,
+			costs=costs,yurts_and_cabins=yurts_and_cabins,bathrooms=bathrooms,
+			parking=parking,ada_access=ada_access,campfires=campfires,showers=showers,
+			wifi=wifi,trash_bins=trash_bins,picnic_area=picnic_area,pets_allowed=pets_allowed,
+			potable_water=potable_water,rv_parks=rv_parks,hiking=hiking,camping=camping,
+			biking=biking,kayaking=kayaking,swimming=swimming,cooking_grills=cooking_grills,
+			hunting=hunting)
 
 
 {

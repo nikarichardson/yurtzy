@@ -113,14 +113,9 @@ def create_app(test_config=None):
 		hunting = body.get('hunting',False) 
 
 		try:
-			campsite = Campsite(name=name,address=address,distance_from_city=distance_from_city,
-			closest_city=closest_city,image=image,website=website,description=description,
-			costs=costs,yurts_and_cabins=False,bathrooms=False,
-			parking=False,ada_access=False,campfires=False,showers=False,
-			wifi=False,trash_bins=False,picnic_area=False,pets_allowed=False,
-			potable_water=False,rv_parks=False,hiking=False,camping=False,
-			biking=False,kayaking=False,swimming=False,cooking_grills=False,
-			hunting=False)
+			campsite = Campsite(name="Trillum lake",address="anon",distance_from_city=10,
+			closest_city="PO",image="an image",website="awebsitee",description="no desc",
+			costs=50)
 			campsite.insert()
 
 			#campsites = []
