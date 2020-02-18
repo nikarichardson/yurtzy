@@ -110,7 +110,7 @@ def create_app(test_config=None):
 		kayaking = body.get('kayaking',False) 
 		swimming = body.get('swimming',False)  
 		cooking_grills = body.get('cooking_grills',False)  
-		hunting = body.get('hunting') 
+		hunting = body.get('hunting',False) 
 
 		return jsonify({
 				'success': True,
@@ -129,9 +129,9 @@ def create_app(test_config=None):
 			hunting=hunting)
 			campsite.insert()
 
-			campsites = []
-			for campsite in selection:
-				campsites.append(campsite.format())
+			#campsites = []
+			#for campsite in selection:
+			#	campsites.append(campsite.format())
 
 			return jsonify({
 				'success': True,
