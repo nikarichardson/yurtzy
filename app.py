@@ -146,6 +146,7 @@ def create_app(test_config=None):
 
 
 	"""
+	Delete campsite with the given id. 
 	"""
 	@app.route('/campsites/<int:campsite_id>', methods=['DELETE'])
 	def delete_campsite(campsite_id):
