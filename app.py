@@ -17,11 +17,11 @@ def create_app(test_config=None):
 
     @app.route('/')
     def hello_greeting():
-        return "Welcome to the Yurtzy backend site! 🏕️ "   
+        return "Welcome to the Yurtzy backend site! 🏕️ "
 
     """
     Gets all campsites organized under listings of nearest urban centers.
-    """ 
+    """
     @app.route('/campsites', methods=['GET'])
     def get_campsites():
         try:
@@ -83,40 +83,41 @@ def create_app(test_config=None):
         website = body.get('website') 
         description = body.get('description') 
         costs = body.get('costs') 
-        yurts_and_cabins = body.get('yurts_and_cabins',False)  
-        bathrooms = body.get('bathrooms',False) 
-        parking = body.get('parking',False)  
-        ada_access = body.get('ada_access',False) 
-        campfires = body.get('campfires',False) 
-        showers = body.get('showers',False) 
-        wifi = body.get('wifi',False)  
-        trash_bins = body.get('trash_bins',False) 
-        picnic_area = body.get('picnic_area',False) 
-        pets_allowed = body.get('pets_allowed',False) 
-        potable_water = body.get('potable_water',False) 
-        rv_parks = body.get('rv_parks',False) 
-        hiking = body.get('hiking',False) 
-        camping = body.get('camping',False) 
-        biking = body.get('biking',False) 
-        kayaking = body.get('kayaking',False) 
-        swimming = body.get('swimming',False)  
-        cooking_grills = body.get('cooking_grills',False)  
-        hunting = body.get('hunting',False) 
+        yurts_and_cabins = body.get('yurts_and_cabins', False)  
+        bathrooms = body.get('bathrooms', False) 
+        parking = body.get('parking', False)  
+        ada_access = body.get('ada_access', False) 
+        campfires = body.get('campfires', False) 
+        showers = body.get('showers', False) 
+        wifi = body.get('wifi', False)  
+        trash_bins = body.get('trash_bins', False) 
+        picnic_area = body.get('picnic_area', False) 
+        pets_allowed = body.get('pets_allowed', False) 
+        potable_water = body.get('potable_water', False) 
+        rv_parks = body.get('rv_parks', False) 
+        hiking = body.get('hiking', False) 
+        camping = body.get('camping', False) 
+        biking = body.get('biking', False) 
+        kayaking = body.get('kayaking', False) 
+        swimming = body.get('swimming', False)  
+        cooking_grills = body.get('cooking_grills', False)  
+        hunting = body.get('hunting', False) 
 
         try:
-            campsite = Campsite(name=name,address=address, 
+            campsite = Campsite(name=name, address=address, 
                                 distance_from_city=distance_from_city, 
-                                closest_city=closest_city,image=image,
-                                website=website,description=description,
-                                costs=costs,yurts_and_cabins=yurts_and_cabins,
-                                bathrooms=bathrooms,parking=parking, 
-                                ada_access=ada_access,campfires=campfires, 
-                                showers=showers,wifi=wifi,trash_bins=trash_bins,
-                                picnic_area=picnic_area,pets_allowed=pets_allowed, 
-                                potable_water=potable_water,rv_parks=rv_parks,  
-                                hiking=hiking,camping=camping,biking=biking, 
-                                kayaking=kayaking,swimming=swimming,
-                                cooking_grills=cooking_grills,hunting=hunting) 
+                                closest_city=closest_city, image=image,
+                                website=website, description=description,
+                                costs=costs, yurts_and_cabins=yurts_and_cabins,
+                                bathrooms=bathrooms, parking=parking, 
+                                ada_access=ada_access, campfires=campfires, 
+                                showers=showers, wifi=wifi,
+                                trash_bins=trash_bins, picnic_area=picnic_area,
+                                pets_allowed=pets_allowed, 
+                                potable_water=potable_water, rv_parks=rv_parks,  
+                                hiking=hiking, camping=camping, biking=biking, 
+                                kayaking=kayaking, swimming=swimming,
+                                cooking_grills=cooking_grills, hunting=hunting) 
 
             campsite.insert()
 
@@ -130,10 +131,10 @@ def create_app(test_config=None):
                 'success': True,
                 'campsite': campsites
             })
-        
+
         except:
             abort(422)
-        
+
     """
     Allows users to edit the given campsite.
     """
@@ -155,25 +156,25 @@ def create_app(test_config=None):
         website = body.get('website') 
         description = body.get('description') 
         costs = body.get('costs') 
-        yurts_and_cabins = body.get('yurts_and_cabins',False)  
-        bathrooms = body.get('bathrooms',False) 
-        parking = body.get('parking',False)  
-        ada_access = body.get('ada_access',False) 
-        campfires = body.get('campfires',False) 
-        showers = body.get('showers',False) 
-        wifi = body.get('wifi',False)  
-        trash_bins = body.get('trash_bins',False) 
-        picnic_area = body.get('picnic_area',False) 
-        pets_allowed = body.get('pets_allowed',False) 
-        potable_water = body.get('potable_water',False) 
-        rv_parks = body.get('rv_parks',False) 
-        hiking = body.get('hiking',False) 
-        camping = body.get('camping',False) 
-        biking = body.get('biking',False) 
-        kayaking = body.get('kayaking',False) 
-        swimming = body.get('swimming',False)  
-        cooking_grills = body.get('cooking_grills',False)  
-        hunting = body.get('hunting',False) 
+        yurts_and_cabins = body.get('yurts_and_cabins', False)  
+        bathrooms = body.get('bathrooms', False) 
+        parking = body.get('parking', False)  
+        ada_access = body.get('ada_access', False) 
+        campfires = body.get('campfires', False) 
+        showers = body.get('showers', False) 
+        wifi = body.get('wifi', False)  
+        trash_bins = body.get('trash_bins', False) 
+        picnic_area = body.get('picnic_area', False) 
+        pets_allowed = body.get('pets_allowed', False) 
+        potable_water = body.get('potable_water', False) 
+        rv_parks = body.get('rv_parks', False) 
+        hiking = body.get('hiking', False) 
+        camping = body.get('camping', False) 
+        biking = body.get('biking', False) 
+        kayaking = body.get('kayaking', False) 
+        swimming = body.get('swimming', False)  
+        cooking_grills = body.get('cooking_grills', False)  
+        hunting = body.get('hunting', False) 
 
         # update campsite with form data
         try: 
@@ -212,7 +213,7 @@ def create_app(test_config=None):
                 'success': True,
                 'campsite': campsite.format()
             })
-        
+
         except:
             abort(422) 
 
