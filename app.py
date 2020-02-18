@@ -86,7 +86,7 @@ def create_app(test_config=None):
 	@app.route('/campsites/<int:campsite_id>', methods=['DELETE'])
 	def delete_campsite(campsite_id):
 		try:
-			selection = Campsite.query.get(campsite_id)
+			selection = Campsite.quer.get(campsite_id)
 
 			if selection is None:
 				abort(404)
