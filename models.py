@@ -133,8 +133,7 @@ class Campsite(db.Model):
     of the model
     '''
     def format(self):
-        return
-        {
+        return {
             'id': self.id,
             'name': self.name,
             'website': self.website,
