@@ -157,6 +157,13 @@ INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,ima
 Government Camp, Oregon 97028',50,'Portland','https://tinyurl.com/slcnop9','Incredible views of Mount Hood.',50,False,True,True,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,False);
 ```
 
+To reset the count of the primary ids, use
+```
+TRUNCATE "Campsite";
+ALTER SEQUENCE "Campsite_id_seq" RESTART WITH 1;
+```
+and then insert your entries as desired. 
+
 ## Unit Tests
 Unit tests can be run with the commands `python3 test_flaskr.py`. Before you run the unit tests, set up the environment variable: 
 ```
