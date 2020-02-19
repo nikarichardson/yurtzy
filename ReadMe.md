@@ -138,16 +138,10 @@ The link to the **Login** page through Auth0 is <a href="https://yurtzy.auth0.co
 ## Testing Endpoints with Postman  
 A <a href="https://www.postman.com/">Postman</a> collection is included in the **Tests** directory. For more information about Postman, click <a href="https://www.postman.com/product/api-client">here</a>.
 
-- JWT Token for `Contributor`, who can patch and add campsites: 
-```
-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFqbEVSRU5FTlRRMk1qUXlNREF4UVRVMU5EbEVNRFV6T1RoRU56WkJNek13TkRNME1EWkJNdyJ9.eyJpc3MiOiJodHRwczovL3l1cnR6eS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU0ODg3YTNhY2NkODkwZTY4MTRhNTE2IiwiYXVkIjoiY2FtcHNpdGUiLCJpYXQiOjE1ODIwNDk2ODYsImV4cCI6MTU4MjEzNjA4NiwiYXpwIjoiWTJSSDJ3WjVlN09jeXNEMjV2amJiNHYwMjJQTWNmQ2MiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbInBhdGNoOmNhbXBzaXRlcyIsInBvc3Q6Y2FtcHNpdGVzIl19.OmwMwQPJkjplTTgj__dPAWjxlo4tE2_nsuf_r4Xf7feMGA_I0zbWQS1i68ODTPO6LLr51QgdxfAPVZcdrL3RRhRB9PRmRkW0maawQ4uNVKynH9tJiVWn3DhBMs0oZuXPZuNTIkeI6JYQTbGhIm0FHolHBu8SmngNou0ZVAwrv4aFMGGgjebtUE8nGRPMRdzzwyPvail8jLERh06SWEyoz9bzouuqj7UK273doH1SZH4Z_i0Sy6_TsBuFfn6KRW-82Mk6qY3fkaU3DPXLl777McjK0pcBdXw2-SbSxcH-Hi5Hvk_Zv-muzMMaWzgtSS8nSJZRKtMQQPuhz78YEHxJGQ
-```
+- `Contributor` can patch and add campsites: 
 (Permissions: `patch:campsites` and `post:campsites`.)
 
-- JWT Token for `Admin`, who can patch, add, *and* delete campsites: 
-```
-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlFqbEVSRU5FTlRRMk1qUXlNREF4UVRVMU5EbEVNRFV6T1RoRU56WkJNek13TkRNME1EWkJNdyJ9.eyJpc3MiOiJodHRwczovL3l1cnR6eS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWU0ODg3NjhhYzUyMjcwZTY0N2E1NmMxIiwiYXVkIjoiY2FtcHNpdGUiLCJpYXQiOjE1ODIwNDk5NzcsImV4cCI6MTU4MjEzNjM3NywiYXpwIjoiWTJSSDJ3WjVlN09jeXNEMjV2amJiNHYwMjJQTWNmQ2MiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTpjYW1wc2l0ZXMiLCJwYXRjaDpjYW1wc2l0ZXMiLCJwb3N0OmNhbXBzaXRlcyJdfQ.oUlS9wYy9sULwqrE6nd0ZwyOnREOFDzwU-MaRDHL1tIl9kztSN5qdBiTxTJS1r92NceWOqpN3RTFC7AOL3NbqdB5t26D1tWwrzlmaqojJC9fK3wFRaryrZ2Rcb8W0f84wGd59jtPjHDm_JuEAZSddZbSTWrOhVJyKXlYTQCG011W1kaQf2AG3iIi5B3_imG32Jvtr0k02vYLgk_fwR2KTs8C6T2FGZps_bpCuB3tVb2HIYreg0BD8yc_43gzMC-YS2Sx8cAsiKoUARINkKdGcWfsXIcvjJwIjzKy8KD3I9ZtwNUdJ7pVySgD9c9DvQx8Txf7dBxMQZ8L-pU8XaIZQg
-```
+- `Admin` can patch, add, *and* delete campsites: 
 (Permissions: `patch:campsites`,`post:campsites`,`delete:campsites`)
 
 
@@ -162,6 +156,13 @@ INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,ima
 INSERT INTO "Campsite" (name,website,address,distance_from_city,closest_city,image,description,costs,yurts_and_cabins,bathrooms,parking,ada_access,campfires,showers,wifi,trash_bins,picnic_area,pets_allowed,potable_water,rv_parks,hiking,kayaking,camping,biking,swimming,cooking_grills,hunting) VALUES ('Trillum Lake','https://www.fs.usda.gov/recarea/mthood/recarea/?recid=53634','Highway 26
 Government Camp, Oregon 97028',50,'Portland','https://tinyurl.com/slcnop9','Incredible views of Mount Hood.',50,False,True,True,True,True,True,False,True,True,True,True,True,True,True,True,True,True,True,False);
 ```
+
+To reset the count of the primary ids, use
+```
+TRUNCATE "Campsite";
+ALTER SEQUENCE "Campsite_id_seq" RESTART WITH 1;
+```
+and then insert your entries as desired. 
 
 ## Unit Tests
 Unit tests can be run with the commands `python3 test_flaskr.py`. Before you run the unit tests, set up the environment variable: 
